@@ -1,4 +1,4 @@
-name: Jira Image CI
+name: Teleport Image CI
 
 on:
   push:
