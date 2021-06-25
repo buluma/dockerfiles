@@ -1,4 +1,4 @@
-name: Vagrant Image CI
+name: Elastalert Image CI
 
 on:
   push:
