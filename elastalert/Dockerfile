@@ -18,6 +18,7 @@ RUN set -ex \
     && wget ${DOWNLOAD_URL} -O elastalert.tar.gz \
     && tar -zxf elastalert.tar.gz -C ${SOURCE_DIR} --strip-components 1 \
     && (cd ${SOURCE_DIR} \
+    && pip install setuptools-rust
     && pip install -r requirements.txt \
     && python setup.py install) \
     && cp ${SOURCE_DIR}/config.yaml.example ${CONFIG_DIR}/config.yaml \
