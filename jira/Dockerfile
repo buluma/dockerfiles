@@ -1,6 +1,6 @@
 FROM atlassian/jira-software:8.10.0
 
-LABEL maintainer="mritd <mritd@linux.com>"
+LABEL maintainer="buluma <ops@buluma.me.ke>"
 
 ARG TZ="Asia/Shanghai"
 
