@@ -2,7 +2,7 @@ FROM atlassian/jira-software:8.10.0
 
 LABEL maintainer="buluma <ops@buluma.me.ke>"
 
-ARG TZ="Asia/Shanghai"
+ARG TZ="Africa/Nairobi"
 
 ENV TZ ${TZ}
 ENV AGENT_PATH /opt/atlassian-agent.jar

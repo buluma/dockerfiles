@@ -2,7 +2,7 @@ FROM alpine:3.10
 
 LABEL maintainer="buluma <ops@buluma.me.ke>"
 
-ARG TZ="Asia/Shanghai"
+ARG TZ="Africa/Nairobi"
 
 ENV TZ ${TZ}
 ENV TELEPORT_VERSION v4.0.2
