@@ -1,4 +1,4 @@
-name: Elastalert Image CI
+name: Jira Image CI
 
 on:
   push:
