@@ -1,0 +1,17 @@
+name: Puppeteer Base Image CI
+
+on:
+  push:
+    paths:
+      - 'puppeteer-base/Dockerfile'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file puppeteer-base/Dockerfile --tag docker-test:$(date +%s)

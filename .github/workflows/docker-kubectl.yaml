@@ -1,0 +1,17 @@
+name: Docker Kubectl Image CI
+
+on:
+  push:
+    paths:
+      - 'docker-kubectl/Dockerfile'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file docker-kubectl/Dockerfile --tag docker-test:$(date +%s)
