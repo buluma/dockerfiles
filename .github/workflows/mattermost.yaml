@@ -15,9 +15,6 @@ jobs:
       - name: yamllint
         uses: ibiqlik/action-yamllint@v3
 
-      - name: test dir
-        run: ls -a mattermost/
-
       - name: Create Issue on Lint failure.
         if: failure()
         uses: buluma/create-issue-action@v2.0.0
