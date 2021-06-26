@@ -1,10 +1,11 @@
 ---
-name: Docker Kubectl
+name: Kubectl
 
 on:
   push:
     paths:
       - 'docker-kubectl/**'
+      - '.github/workflows/docker-kubectl.yaml'
 
 jobs:
   yamllint:
@@ -15,7 +16,7 @@ jobs:
         uses: ibiqlik/action-yamllint@v3
 
       - name: test dir
-        run: ls -a
+        run: ls -a docker-kubectl/
 
   build:
 
@@ -24,5 +25,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: test dir
+      run: ls -a docker-kubectl/
+
+    - name: Run in Dir above
+      run: cd docker-kubectl && ls -a
+
     - name: Build the Docker image
-      run: docker build . --file docker-kubectl/Dockerfile --tag docker-kubectl-test:$(date +%s)
+      run: docker build . --file Dockerfile --tag docker-kubectl-test:$(date +%s)
