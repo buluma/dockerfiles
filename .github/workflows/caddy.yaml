@@ -8,20 +8,20 @@ on:
       - '.github/workflows/caddy.yaml'
 
 jobs:
-  # yamllint:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: yamllint
-  #       uses: ibiqlik/action-yamllint@v3
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: yamllint
+        uses: ibiqlik/action-yamllint@v3
 
-  #     - name: test dir
-  #       run: ls -a caddy/
+      - name: test dir
+        run: ls -a caddy/
 
   build:
 
     runs-on: ubuntu-latest
-    # needs: yamllint
+    needs: yamllint
 
     steps:
     - uses: actions/checkout@v2
