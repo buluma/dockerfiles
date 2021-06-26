@@ -22,11 +22,11 @@ jobs:
         if: failure()
         uses: buluma/create-issue-action@v2.0.0
         with:
-          title: Lint Test Failed
+          title: Mattermost Lint Test Failed
           token: ${{secrets.GITHUB_TOKEN}}
           assignees: ${{github.actor}}
           labels: bug
-          body: Lint check failed for commit ${{github.sha}}
+          body: Mattermost Lint check failed for commit ${{github.sha}}
 
   build:
 
@@ -51,8 +51,8 @@ jobs:
       if: failure()
       uses: buluma/create-issue-action@v2.0.0
       with:
-        title: ActiveMQ Build Failed
+        title: Mattermost Build Failed
         token: ${{secrets.GITHUB_TOKEN}}
         assignees: ${{github.actor}}
         labels: bug
-        body: Lint check failed for commit ${{github.sha}}
+        body: Mattermost build failed for commit ${{github.sha}}

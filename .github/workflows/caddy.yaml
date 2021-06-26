@@ -22,7 +22,7 @@ jobs:
         if: failure()
         uses: buluma/create-issue-action@v2.0.0
         with:
-          title: Lint Test Failed
+          title: Caddy Lint Test Failed
           token: ${{secrets.GITHUB_TOKEN}}
           assignees: ${{github.actor}}
           labels: bug
@@ -51,7 +51,7 @@ jobs:
       if: failure()
       uses: buluma/create-issue-action@v2.0.0
       with:
-        title: ActiveMQ Build Failed
+        title: Caddy Build Failed
         token: ${{secrets.GITHUB_TOKEN}}
         assignees: ${{github.actor}}
         labels: bug

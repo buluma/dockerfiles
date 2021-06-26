@@ -18,6 +18,16 @@ jobs:
       - name: test dir
         run: ls -a gh-pages/
 
+      - name: Create Issue on Lint failure.
+        if: failure()
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          title: Github-Pages Lint Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
+          assignees: ${{github.actor}}
+          labels: bug
+          body: Github-Pages Lint check failed for commit ${{github.sha}}
+
   build:
 
     runs-on: ubuntu-latest
@@ -31,5 +41,18 @@ jobs:
     - name: Run in Dir above
       run: cd gh-pages && ls -a
 
+    - name: Where are we
+      run: pwd && ls -a
+
     - name: Build the Docker image
       run: docker build . --file gh-pages/Dockerfile --tag docker-gh-pages-test:$(date +%s)
+
+    - name: Create Issue on Build failure.
+      if: failure()
+      uses: buluma/create-issue-action@v2.0.0
+      with:
+        title: Github-Pages Build Failed
+        token: ${{secrets.GITHUB_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: bug
+        body: Github-Pages build failed for commit ${{github.sha}}

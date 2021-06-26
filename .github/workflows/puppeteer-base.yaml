@@ -1,5 +1,5 @@
 ---
-name: Puppeteer Base
+name: Puppeteer-Base
 
 on:
   push:
@@ -9,14 +9,24 @@ on:
 
 jobs:
   yamllint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: yamllint
         uses: ibiqlik/action-yamllint@v3
 
       - name: test dir
-        run: ls -a
+        run: ls -a puppeteer-base/
+
+      - name: Create Issue on Lint failure.
+        if: failure()
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          title: Puppeteer-Base Lint Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
+          assignees: ${{github.actor}}
+          labels: bug
+          body: Puppeteer-Base Lint check failed for commit ${{github.sha}}
 
   build:
 
@@ -25,5 +35,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: test dir
+      run: ls -a puppeteer-base/
+
+    - name: Run in Dir above
+      run: cd puppeteer-base && ls -a
+
+    - name: Where are we
+      run: pwd && ls -a
+
     - name: Build the Docker image
-      run: docker build . --file puppeteer-base/Dockerfile --tag docker-puppeteer-test:$(date +%s)
+      run: docker build . --file puppeteer-base/Dockerfile --tag docker-puppeteer-base-test:$(date +%s)
+
+    - name: Create Issue on Build failure.
+      if: failure()
+      uses: buluma/create-issue-action@v2.0.0
+      with:
+        title: Puppeteer-Base Build Failed
+        token: ${{secrets.GITHUB_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: bug
+        body: Puppeteer-Base build failed for commit ${{github.sha}}

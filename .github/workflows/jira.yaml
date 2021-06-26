@@ -22,11 +22,11 @@ jobs:
         if: failure()
         uses: buluma/create-issue-action@v2.0.0
         with:
-          title: Lint Test Failed
+          title: Jira Lint Test Failed
           token: ${{secrets.GITHUB_TOKEN}}
           assignees: ${{github.actor}}
           labels: bug
-          body: Lint check failed for commit ${{github.sha}}
+          body: Jira Lint check failed for commit ${{github.sha}}
 
   build:
 
@@ -51,8 +51,8 @@ jobs:
       if: failure()
       uses: buluma/create-issue-action@v2.0.0
       with:
-        title: ActiveMQ Build Failed
+        title: Jira Build Failed
         token: ${{secrets.GITHUB_TOKEN}}
         assignees: ${{github.actor}}
         labels: bug
-        body: Lint check failed for commit ${{github.sha}}
+        body: Jira build failed for commit ${{github.sha}}
