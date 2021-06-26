@@ -49,5 +49,5 @@ jobs:
       run: cd "/tmp/$repo" && git submodule update --init --recursive
     - name: build
       run: cd "/tmp/$repo" && ls -a
-    # - name: test
-      # run: cd "/tmp/$repo" && make test
+    - name: test
+      run: cd "/tmp/$repo" && cd confluence && ls -a
