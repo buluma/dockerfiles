@@ -1,4 +1,4 @@
-name: gh-pages Image CI
+name: Tor Image CI
 
 on:
   push:
