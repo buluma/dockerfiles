@@ -1,4 +1,5 @@
-name: Tor Image CI
+---
+name: Tor
 
 on:
   push:
