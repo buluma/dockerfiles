@@ -45,11 +45,11 @@ jobs:
       run: docker build . --file activemq/Dockerfile --tag docker-activemq-test:$(date +%s)
 
     - name: Create Issue on Build failure.
-        if: failure()
-        uses: buluma/create-issue-action@v2.0.0
-        with:
-          title: ActiveMQ Build Failed
-          token: ${{secrets.GITHUB_TOKEN}}
-          assignees: ${{github.actor}}
-          labels: bug
-          body: Lint check failed for commit ${{github.sha}}
+      if: failure()
+      uses: buluma/create-issue-action@v2.0.0
+      with:
+        title: ActiveMQ Build Failed
+        token: ${{secrets.GITHUB_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: bug
+        body: Lint check failed for commit ${{github.sha}}
