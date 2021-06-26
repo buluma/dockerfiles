@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 MAINTAINER mritd <mritd@linux.com>
 
 ENV TZ 'Asia/Shanghai'
-ENV CHROME_VERSION 67.0.3396.79
+ENV CHROME_VERSION 92.0.4515.70
 ENV CHROME_APT "deb https://dl.google.com/linux/chrome/deb/ stable main"
 
 RUN apt update -y && apt upgrade -y \
