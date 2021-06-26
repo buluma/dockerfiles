@@ -9,7 +9,7 @@ on:
 
 jobs:
   yamllint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: yamllint
@@ -17,6 +17,16 @@ jobs:
 
       - name: test dir
         run: ls -a confluence/
+
+      - name: Create Issue on Lint failure.
+        if: failure()
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          title: Lint Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
+          assignees: ${{github.actor}}
+          labels: bug
+          body: Lint check failed for commit ${{github.sha}}
 
   build:
 
@@ -31,5 +41,18 @@ jobs:
     - name: Run in Dir above
       run: cd confluence && ls -a
 
+    - name: Where are we
+      run: pwd && ls -a
+
     - name: Build the Docker image
       run: docker build . --file confluence/Dockerfile --tag docker-confluence-test:$(date +%s)
+
+    - name: Create Issue on Build failure.
+      if: failure()
+      uses: buluma/create-issue-action@v2.0.0
+      with:
+        title: ActiveMQ Build Failed
+        token: ${{secrets.GITHUB_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: bug
+        body: Lint check failed for commit ${{github.sha}}

@@ -1,4 +1,4 @@
-FROM ubuntu:20
+FROM ubuntu:18.04
 
 LABEL maintainer="buluma <ops@buluma.me.ke>"
 

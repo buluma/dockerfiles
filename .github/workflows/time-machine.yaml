@@ -1,5 +1,5 @@
 ---
-name: Time-Machine
+name: Time Machine
 
 on:
   push:
@@ -18,6 +18,16 @@ jobs:
       - name: test dir
         run: ls -a time-machine/
 
+      - name: Create Issue on Lint failure.
+        if: failure()
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          title: Lint Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
+          assignees: ${{github.actor}}
+          labels: bug
+          body: Lint check failed for commit ${{github.sha}}
+
   build:
 
     runs-on: ubuntu-latest
@@ -31,5 +41,18 @@ jobs:
     - name: Run in Dir above
       run: cd time-machine && ls -a
 
+    - name: Where are we
+      run: pwd && ls -a
+
     - name: Build the Docker image
       run: docker build . --file time-machine/Dockerfile --tag docker-time-machine-test:$(date +%s)
+
+    - name: Create Issue on Build failure.
+      if: failure()
+      uses: buluma/create-issue-action@v2.0.0
+      with:
+        title: ActiveMQ Build Failed
+        token: ${{secrets.GITHUB_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: bug
+        body: Lint check failed for commit ${{github.sha}}
