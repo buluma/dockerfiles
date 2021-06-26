@@ -1,22 +1,22 @@
 ---
-name: Confluence
+name: ActiveMQ
 
 on:
   push:
     paths:
-      - 'confluence/**'
-      - '.github/workflows/confluence.yaml'
+      - 'activemq/**'
+      - '.github/workflows/activemq.yaml'
 
 jobs:
   yamllint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: yamllint
         uses: ibiqlik/action-yamllint@v3
 
       - name: test dir
-        run: ls -a confluence/
+        run: ls -a activemq/
 
   build:
 
@@ -26,10 +26,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: test dir
-      run: ls -a confluence/
+      run: ls -a activemq/
 
     - name: Run in Dir above
-      run: cd confluence && ls -a
+      run: cd activemq && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker-test:$(date +%s)
+      run: docker build . --file Dockerfile --tag docker-activemq-test:$(date +%s)
