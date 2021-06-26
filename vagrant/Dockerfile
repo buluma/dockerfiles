@@ -1,5 +1,8 @@
 FROM debian:bullseye-slim
+
 LABEL maintainer="buluma <ops@buluma.me.ke>"
+
+ENV TZ 'Afria/Nairobi'
 
 RUN	apt-get update && apt-get install -y \
 	bridge-utils \
@@ -17,6 +20,8 @@ RUN	apt-get update && apt-get install -y \
 	ssh \
 	zlib1g-dev \
 	--no-install-recommends \
+	&& ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
+    && echo ${TZ} > /etc/timezone \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV	VAGRANT_VERSION 2.2.9

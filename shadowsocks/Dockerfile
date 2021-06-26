@@ -1,8 +1,8 @@
-FROM alpine:3.13
+FROM alpine:3.14
 
-LABEL maintainer="mritd <mritd@linux.com>"
+LABEL maintainer="buluma <ops@buluma.me.ke>"
 
-ARG TZ='Asia/Shanghai'
+ENV TZ 'Afria/Nairobi'
 
 ENV TZ ${TZ}
 ENV SS_LIBEV_VERSION v3.3.5

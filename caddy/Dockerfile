@@ -24,13 +24,13 @@ RUN set -e \
 
 FROM alpine:3.13 AS dist
 
-LABEL maintainer="mritd <mritd@linux.com>"
+LABEL maintainer="buluma <ops@buluma.me.ke>"
+
+ENV TZ 'Afria/Nairobi'
 
 # See https://caddyserver.com/docs/conventions#file-locations for details
 ENV XDG_CONFIG_HOME /config
 ENV XDG_DATA_HOME /data
-
-ENV TZ Asia/Shanghai
 
 COPY --from=builder /caddy /usr/bin/caddy
 ADD https://raw.githubusercontent.com/caddyserver/dist/master/config/Caddyfile /etc/caddy/Caddyfile

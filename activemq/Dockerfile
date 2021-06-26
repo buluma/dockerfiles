@@ -1,8 +1,8 @@
 FROM openjdk:11.0.2-jre-slim-stretch
 
-LABEL maintainer="mritd <mritd@linux.com>"
+LABEL maintainer="buluma <ops@buluma.me.ke>"
 
-ARG TZ="Asia/Shanghai"
+ENV TZ 'Afria/Nairobi'
 
 ENV TZ ${TZ}
 ENV ACTIVEMQ_VERSION 5.15.8
