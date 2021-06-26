@@ -4,6 +4,7 @@ require 'json'
 require 'open-uri'
 versions = JSON.parse(URI.open('https://pages.github.com/versions.json').read)
 
+gem 'open-uri'
 gem 'jekyll', versions['jekyll']
 gem 'jekyll-sass-converter', versions['jekyll-sass-converter']
 gem 'kramdown', versions['kramdown']

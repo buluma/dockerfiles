@@ -19,6 +19,7 @@ RUN apk upgrade --update \
     && cp ~/.gemrc /etc/gemrc \
     && chmod uog+r /etc/gemrc \
     && gem install bundler \
+    && $ gem install open-uri
     && bundle config build.jekyll --no-rdoc \
     && bundle install \
     && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
