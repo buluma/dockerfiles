@@ -12,7 +12,7 @@ RUN apt update -y && apt upgrade -y \
     && echo ${CHROME_APT} > /etc/apt/sources.list.d/google-chrome.list \
     && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && apt update -y && apt upgrade -y \
-    && apt install google-chrome-stable=${CHROME_VERSION}-1 -y \
+    && apt install google-chrome-stable -y \
     && apt autoremove -y && apt autoclean -y \
     && mkdir /data \
     && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
