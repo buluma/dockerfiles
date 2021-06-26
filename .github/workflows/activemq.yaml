@@ -81,4 +81,4 @@ jobs:
         with:
           context: mattermost/
           push: true
-          tags: buluma/caddy:latest
+          tags: buluma/activemq:latest
