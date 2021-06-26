@@ -2,7 +2,7 @@ FROM alpine:3.10
 
 LABEL maintainer="mritd <mritd@linux.com>"
 
-ARG TZ='Asia/Shanghai'
+ARG TZ='Africa/Nairobi'
 
 ENV TZ ${TZ}
 
