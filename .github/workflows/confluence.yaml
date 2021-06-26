@@ -8,29 +8,30 @@ on:
       - '.github/workflows/confluence.yaml'
 
 jobs:
-#   yamllint:
-#     runs-on: ubuntu-20.04
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: yamllint
-#         uses: ibiqlik/action-yamllint@v3
+  yamllint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: yamllint
+        uses: ibiqlik/action-yamllint@v3
 
-#       - name: test dir
-#         run: ls -a confluence/
+      - name: test dir
+        run: ls -a confluence/
 
-#   build:
+  # build:
 
-#     runs-on: ubuntu-latest
-#     needs: yamllint
+  #   runs-on: ubuntu-latest
+  #   needs: yamllint
 
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: test dir
-#       run: ls -a confluence/
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: test dir
+  #     run: ls -a confluence/
 
-#     - name: Build the Docker image
-#       run: docker build . --file confluence/Dockerfile --tag docker-test:$(date +%s)
-build:
+  #   - name: Build the Docker image
+  #     run: docker build . --file confluence/Dockerfile --tag docker-test:$(date +%s)
+  
+  build2:
     #name: build
     timeout-minutes: 60
     runs-on: ubuntu-latest
