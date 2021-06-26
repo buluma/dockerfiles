@@ -32,4 +32,4 @@ jobs:
       run: cd activemq && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker-activemq-test:$(date +%s)
+      run: docker build . --file activemq/Dockerfile --tag docker-activemq-test:$(date +%s)
