@@ -2,30 +2,31 @@
 name: Alpine
 
 on:
-  schedule:
-    - cron: '27 11 * * *'
   push:
     paths:
       - 'alpine/**'
       - '.github/workflows/alpine.yaml'
-  pull_request:
-    branches: [ main ]
-
-# on:
-#   push:
-#     paths:
-#       - 'alpine/**'
 
 jobs:
   yamllint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: yamllint
         uses: ibiqlik/action-yamllint@v3
 
       - name: test dir
-        run: ls -a
+        run: ls -a alpine/
+
+      - name: Create Issue on Lint failure.
+        if: failure()
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          title: Lint Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
+          assignees: ${{github.actor}}
+          labels: bug
+          body: Lint check failed for commit ${{github.sha}}
 
   build:
 
@@ -34,5 +35,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: test dir
+      run: ls -a alpine/
+
+    - name: Run in Dir above
+      run: cd alpine && ls -a
+
     - name: Build the Docker image
-      run: docker build . --file alpine/Dockerfile --tag docker-test:$(date +%s)
+      run: docker build . --file alpine/Dockerfile --tag docker-alpine-test:$(date +%s)
+
+    - name: Create Issue on Build failure.
+      if: failure()
+      uses: buluma/create-issue-action@v2.0.0
+      with:
+        title: ActiveMQ Build Failed
+        token: ${{secrets.GITHUB_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: bug
+        body: Lint check failed for commit ${{github.sha}}
