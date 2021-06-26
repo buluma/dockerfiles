@@ -7,7 +7,7 @@ ARG TZ="Africa/Nairobi"
 ENV TZ ${TZ}
 ENV AGENT_PATH /opt/atlassian-agent.jar
 
-RUN pwd && ls -a confluence/
+RUN pwd && ls -a
 
 COPY confluence/atlassian-agent.jar ${AGENT_PATH}
 COPY hijack.sh /hijack.sh
