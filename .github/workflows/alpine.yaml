@@ -2,9 +2,19 @@
 name: Alpine
 
 on:
+  schedule:
+    - cron: '27 11 * * *'
   push:
     paths:
       - 'alpine/**'
+      - '.github/workflows/alpine.yaml'
+  pull_request:
+    branches: [ main ]
+
+# on:
+#   push:
+#     paths:
+#       - 'alpine/**'
 
 jobs:
   yamllint:

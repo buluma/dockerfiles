@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'fpm/**'
+      - '.github/workflows/fpm.yaml'
 
 jobs:
   yamllint:

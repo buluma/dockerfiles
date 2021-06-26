@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'puppeteer-base/**'
+      - '.github/workflows/puppeteer-base.yaml'
 
 jobs:
   yamllint:
