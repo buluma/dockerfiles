@@ -34,5 +34,5 @@ jobs:
     - name: Where are we
       run: pwd && ls -a
 
-    # - name: Build the Docker image
-      # run: docker build . --file Dockerfile --tag docker-caddy-test:$(date +%s)
+    - name: Build the Docker image
+      run: docker build . --file caddy/Dockerfile --tag docker-caddy-test:$(date +%s)
