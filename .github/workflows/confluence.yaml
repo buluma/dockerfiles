@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'confluence/**'
+      - '.github/workflows/confluence.yaml'
 
 jobs:
   yamllint:
