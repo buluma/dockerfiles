@@ -1,5 +1,5 @@
 ---
-name: chrome-headless
+name: Chrome Headless
 
 on:
   push:
