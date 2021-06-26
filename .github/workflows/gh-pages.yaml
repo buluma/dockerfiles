@@ -45,7 +45,8 @@ jobs:
       run: pwd && ls -a
 
     - name: Build the Docker image
-      run: cd gh-pages && docker build . --file Dockerfile --tag docker-gh-pages-test:$(date +%s)
+      # run: cd gh-pages && docker build . --file Dockerfile --tag docker-gh-pages-test:$(date +%s)
+      run: cd gh-pages && pwd && ls -a && docker build . --file Dockerfile --tag docker-gh-pages-test:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()

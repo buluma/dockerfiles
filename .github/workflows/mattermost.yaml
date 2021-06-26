@@ -45,7 +45,8 @@ jobs:
       run: pwd && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file mattermost/Dockerfile --tag docker-mattermost-test:$(date +%s)
+      # run: docker build . --file mattermost/Dockerfile --tag docker-mattermost-test:$(date +%s)
+      run: cd mattermost && pwd && ls -a && docker build . --file Dockerfile --tag docker-mattermost-test:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()

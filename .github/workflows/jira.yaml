@@ -45,7 +45,8 @@ jobs:
       run: pwd && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file jira/Dockerfile --tag docker-jira-test:$(date +%s)
+      # run: docker build . --file jira/Dockerfile --tag docker-jira-test:$(date +%s)
+      run: cd jira && pwd && ls -a && docker build . --file Dockerfile --tag docker-jira-test:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()

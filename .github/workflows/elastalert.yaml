@@ -45,7 +45,8 @@ jobs:
       run: pwd && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file elastalert/Dockerfile --tag docker-elastalert-test:$(date +%s)
+      # run: docker build . --file elastalert/Dockerfile --tag docker-elastalert-test:$(date +%s)
+      run: cd elastalert && pwd && ls -a && docker build . --file Dockerfile --tag docker-elastalert-test:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()
