@@ -8,7 +8,9 @@ name: Docker Publish
 
 on:
   schedule:
-    - cron: '27 11 * * *'
+    # * is a special character in YAML so you have to quote this string
+    - cron: '30 * * * *'
+    
   push:
     branches: [ main ]
     # Publish semver tags as releases.

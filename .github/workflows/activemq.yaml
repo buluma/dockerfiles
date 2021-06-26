@@ -7,6 +7,10 @@ on:
       - 'activemq/**'
       - '.github/workflows/activemq.yaml'
 
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '30 * * * *'
+
 jobs:
   yamllint:
     runs-on: ubuntu-latest

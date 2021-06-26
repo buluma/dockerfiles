@@ -6,6 +6,10 @@ on:
     paths:
       - 'vagrant/**'
       - '.github/workflows/vagrant.yaml'
+      
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '30 * * * *'
 
 jobs:
   yamllint:
