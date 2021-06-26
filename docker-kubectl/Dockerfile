@@ -1,8 +1,8 @@
 FROM docker:20
 
-LABEL maintainer="mritd <mritd@linux.com>"
+LABEL maintainer="buluma <ops@buluma.me.ke>"
 
-ARG TZ="Asia/Shanghai"
+ARG TZ="Africa/Nairobi"
 
 ENV TZ ${TZ}
 

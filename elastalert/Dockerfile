@@ -2,7 +2,7 @@ FROM python:3.6.10-alpine3.11
 
 LABEL maintainer="buluma <ops@buluma.me.ke>"
 
-ARG TZ="Asia/Shanghai"
+ARG TZ="Africa/Nairobi"
 
 ENV TZ ${TZ}
 ENV VERSION v0.2.4

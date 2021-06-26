@@ -1,8 +1,8 @@
-FROM alpine:3.10
+FROM alpine:3.14
 
-LABEL maintainer="mritd <mritd@linux.com>"
+LABEL maintainer="buluma <ops@buluma.me.ke>"
 
-ARG TZ="Asia/Shanghai"
+ARG TZ="Africa/Nairobi"
 
 ENV TZ ${TZ}
 ENV NETATALK_VERSION 3.1.12
