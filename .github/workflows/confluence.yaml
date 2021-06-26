@@ -45,7 +45,8 @@ jobs:
       run: pwd && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file confluence/Dockerfile --tag docker-confluence-test:$(date +%s)
+      # run: docker build . --file confluence/Dockerfile --tag docker-confluence-test:$(date +%s)
+      run: cd confluence && pwd && ls -a && docker build . --file Dockerfile --tag docker-confluence-test:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()
