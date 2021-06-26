@@ -5,17 +5,18 @@ on:
   push:
     paths:
       - 'tor/**'
+      - '.github/workflows/tor.yaml'
 
 jobs:
   yamllint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: yamllint
         uses: ibiqlik/action-yamllint@v3
 
       - name: test dir
-        run: ls -a
+        run: ls -a tor/
 
   build:
 
@@ -24,5 +25,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: test dir
+      run: ls -a tor/
+
+    - name: Run in Dir above
+      run: cd tor && ls -a
+
     - name: Build the Docker image
-      run: docker build . --file tor/Dockerfile --tag docker-test:$(date +%s)
+      run: docker build . --file Dockerfile --tag docker-test:$(date +%s)
