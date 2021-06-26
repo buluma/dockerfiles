@@ -31,5 +31,5 @@ jobs:
     - name: Run in Dir above
       run: cd caddy && ls -a
 
-    # - name: Build the Docker image
-      # run: docker build . --file Dockerfile --tag docker-caddy-test:$(date +%s)
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag docker-caddy-test:$(date +%s)
