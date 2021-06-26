@@ -42,7 +42,7 @@ jobs:
       run: cd chrome-headless && ls -a
 
     - name: Build the Docker image
-      run: pwd && ls -a
+      run: cd chrome-headless && pwd && ls -a
       # run: docker build . --file chrome-headless/Dockerfile --tag docker-activemq-test:$(date +%s)
 
     - name: Create Issue on Build failure.
