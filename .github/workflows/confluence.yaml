@@ -25,7 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: test dir
-        run: ls -a confluence/
-        
+      run: ls -a confluence/
+
     - name: Build the Docker image
       run: docker build . --file confluence/Dockerfile --tag docker-test:$(date +%s)
