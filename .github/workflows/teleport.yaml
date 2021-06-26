@@ -4,7 +4,7 @@ name: Teleport
 on:
   push:
     paths:
-      - 'teleport/**'
+      - 'jira/**'
       - '.github/workflows/teleport.yaml'
 
 jobs:
@@ -32,4 +32,4 @@ jobs:
       run: cd teleport && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker-test:$(date +%s)
+      run: docker build . --file Dockerfile --tag docker-teleport-test:$(date +%s)
