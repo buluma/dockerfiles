@@ -19,6 +19,8 @@ RUN apk upgrade \
     && apk del wget tar \
     && rm -rf /*.tar.gz /teleport /var/cache/apk/*
 
+RUN ls -a .
+
 COPY teleport.yaml teleport.yaml
 
 VOLUME /var/lib/teleport /etc/teleport
