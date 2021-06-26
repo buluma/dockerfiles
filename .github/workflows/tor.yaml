@@ -4,7 +4,7 @@ name: Tor
 on:
   push:
     paths:
-      - 'tor/Dockerfile'
+      - 'tor/**'
 
 jobs:
   yamllint:

@@ -4,7 +4,7 @@ name: Elastalert
 on:
   push:
     paths:
-      - 'elastalert/Dockerfile'
+      - 'elastalert/**'
 
 jobs:
   yamllint:

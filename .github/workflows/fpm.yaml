@@ -4,7 +4,7 @@ name: FPM
 on:
   push:
     paths:
-      - 'fpm/Dockerfile'
+      - 'fpm/**'
 
 jobs:
   yamllint:

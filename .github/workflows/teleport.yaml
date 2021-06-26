@@ -4,7 +4,7 @@ name: Teleport
 on:
   push:
     paths:
-      - 'jira/Dockerfile'
+      - 'jira/**'
 
 jobs:
   yamllint:

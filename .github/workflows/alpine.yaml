@@ -4,7 +4,7 @@ name: Alpine
 on:
   push:
     paths:
-      - 'alpine/Dockerfile'
+      - 'alpine/**'
 
 jobs:
   yamllint:

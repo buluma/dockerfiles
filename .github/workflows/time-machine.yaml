@@ -4,8 +4,7 @@ name: Time Machine
 on:
   push:
     paths:
-      - 'time-machine/Dockerfile'
-      - 'time-machine'
+      - 'time-machine/**'
 
 jobs:
   yamllint:

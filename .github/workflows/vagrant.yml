@@ -4,7 +4,7 @@ name: Vagrant
 on:
   push:
     paths:
-      - 'vagrant/Dockerfile'
+      - 'vagrant/**'
 
 jobs:
   yamllint:
