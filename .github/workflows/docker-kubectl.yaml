@@ -32,4 +32,4 @@ jobs:
       run: cd docker-kubectl && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker-kubectl-test:$(date +%s)
+      run: docker build . --file docker-kubectl/Dockerfile --tag docker-kubectl-test:$(date +%s)

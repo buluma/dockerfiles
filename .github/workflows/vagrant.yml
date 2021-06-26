@@ -1,21 +1,22 @@
 ---
-name: Vagrant
+name: vagrant
 
 on:
   push:
     paths:
       - 'vagrant/**'
+      - '.github/workflows/vagrant.yaml'
 
 jobs:
   yamllint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: yamllint
         uses: ibiqlik/action-yamllint@v3
 
       - name: test dir
-        run: ls -a
+        run: ls -a vagrant/
 
   build:
 
@@ -24,5 +25,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: test dir
+      run: ls -a vagrant/
+
+    - name: Run in Dir above
+      run: cd vagrant && ls -a
+
     - name: Build the Docker image
       run: docker build . --file vagrant/Dockerfile --tag docker-vagrant-test:$(date +%s)

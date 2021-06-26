@@ -32,4 +32,4 @@ jobs:
       run: cd chrome-headless && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker-chrome-headless-test:$(date +%s)
+      run: docker build . --file chrome-headless/Dockerfile --tag docker-chrome-headless-test:$(date +%s)

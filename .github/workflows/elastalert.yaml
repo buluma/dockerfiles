@@ -32,4 +32,4 @@ jobs:
       run: cd elastalert && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker-elastalert-test:$(date +%s)
+      run: docker build . --file elastalert/Dockerfile --tag docker-elastalert-test:$(date +%s)
