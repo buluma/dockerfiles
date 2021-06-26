@@ -1,4 +1,4 @@
-name: Tor Image CI
+name: Time Machine
 
 on:
   push:
