@@ -8,15 +8,15 @@ on:
       - '.github/workflows/confluence.yaml'
 
 jobs:
-  yamllint:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - name: yamllint
-        uses: ibiqlik/action-yamllint@v3
+  # yamllint:
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: yamllint
+  #       uses: ibiqlik/action-yamllint@v3
 
-      - name: test dir
-        run: ls -a confluence/
+  #     - name: test dir
+  #       run: ls -a confluence/
 
   # build:
 
