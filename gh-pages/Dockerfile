@@ -5,12 +5,13 @@ LABEL maintainer="buluma <ops@buluma.me.ke>"
 ARG TZ="Africa/Nairobi"
 
 ENV TZ ${TZ}
+ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1
 
 COPY Gemfile Gemfile
 
 RUN apk upgrade --update \
     && apk add bash build-base libffi zlib libxml2 \
-        libxslt ruby ruby-io-console ruby-json yaml \
+        libxslt ruby ruby-io-console ruby-json yaml openssl-dev \
         nodejs git perl tzdata \
     && apk add --virtual .build-deps \
         build-base libffi-dev zlib-dev libxml2-dev \
