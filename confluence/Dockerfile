@@ -1,4 +1,4 @@
-FROM atlassian/confluence-server:7.4.1
+FROM atlassian/confluence-server:7.12.1
 
 LABEL maintainer="buluma <ops@buluma.me.ke>"
 
