@@ -1,9 +1,9 @@
 FROM ubuntu:18.04
 
-MAINTAINER mritd <mritd@linux.com>
+LABEL maintainer="buluma <ops@buluma.me.ke>"
 
-ENV TZ 'Asia/Shanghai'
-ENV CHROME_VERSION 92.0.4515.70
+ENV TZ 'Afria/Nairobi'
+
 ENV CHROME_APT "deb https://dl.google.com/linux/chrome/deb/ stable main"
 
 RUN apt update -y && apt upgrade -y \
