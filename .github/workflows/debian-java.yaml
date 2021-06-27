@@ -50,7 +50,7 @@ jobs:
 
     - name: Build the Docker image
       # run: docker build . --file jira/Dockerfile --tag docker-jira-test:$(date +%s)
-      run: cd debian-java && pwd && ls -a && docker build . --file Dockerfile --tag docker-debian-java-test:$(date +%s)
+      run: cd debian-java && pwd && ls -a && docker build . --file Dockerfile --tag docker-debian-java:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()
@@ -88,4 +88,4 @@ jobs:
         with:
           context: debian-java/
           push: true
-          tags: buluma/debian-java:latest
+          tags: buluma/debian-java:jre7
