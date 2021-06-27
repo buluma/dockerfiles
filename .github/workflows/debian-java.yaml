@@ -88,4 +88,4 @@ jobs:
         with:
           context: debian-java/
           push: true
-          tags: buluma/debian-java:jre7
+          tags: buluma/debian-java:jdk8
