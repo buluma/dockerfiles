@@ -45,7 +45,7 @@ jobs:
       run: cd twemproxy && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file twemproxy/Dockerfile --tag docker-twemproxy:$(date +%s)
+      run: cd twemproxy && docker build . --file Dockerfile --tag docker-twemproxy:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()
