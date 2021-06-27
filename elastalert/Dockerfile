@@ -9,6 +9,7 @@ ENV VERSION v0.2.4
 ENV SOURCE_DIR /usr/local/elastalert
 ENV CONFIG_DIR /etc/elastalert
 ENV DOWNLOAD_URL https://github.com/Yelp/elastalert/archive/${VERSION}.tar.gz
+ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1
 
 RUN set -ex \
     && apk upgrade \
@@ -20,7 +21,7 @@ RUN set -ex \
     && (cd ${SOURCE_DIR} \
     && pip install --upgrade pip \
     && pip install setuptools-rust \
-    pip install --upgrade pip \
+    && pip install --upgrade pip \
     && pip install -r requirements.txt \
     && python setup.py install) \
     && cp ${SOURCE_DIR}/config.yaml.example ${CONFIG_DIR}/config.yaml \
