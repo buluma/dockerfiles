@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.10
 
 LABEL maintainer="buluma <ops@buluma.me.ke>"
 
@@ -10,8 +10,7 @@ ENV NETATALK_DOWNLOAD_URL https://downloads.sourceforge.net/project/netatalk/net
 
 RUN set -ex \
     && apk --update upgrade \
-    && apk add --update --no-cache curl py-pip \
-    && apk add bash tzdata libldap libgcrypt \
+    && apk add bash tzdata libldap libgcrypt python \
         dbus dbus-glib py-dbus linux-pam cracklib db \
         libevent file acl openssl avahi runit \
     && apk add --no-cache --virtual .build-deps \

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER_NAME=${USER_NAME:-"mritd"}
+USER_NAME=${USER_NAME:-"buluma"}
 USER_ID=${USER_ID:-"1000"}
 PASSWORD=${PASSWORD:-"123456"}
 MOUNT_POINT=${MOUNT_POINT-"/data"}
@@ -46,7 +46,7 @@ time machine = yes
 vol size limit = ${VOL_SIZE_MB}
 EOF
 else
-    echo "afp.conf already modify!"
+    echo "afp.conf already modified!"
 fi
 
 echo "Starting..."
