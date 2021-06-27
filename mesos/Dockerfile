@@ -1,5 +1,5 @@
 FROM harisekhon/debian-java:jre7
-# FROM buluma/debian-java
+# FROM buluma/debian-java:jre7
 MAINTAINER Michael Buluma
 
 ARG MESOS_VERSION=0.28.2
