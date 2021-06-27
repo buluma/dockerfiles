@@ -24,8 +24,9 @@ ARG JAVA_RELEASE=JDK
 
 RUN bash -c ' \
     set -euxo pipefail && \
-    apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main' \
     apt-get update && \
+    apt-get install software-properties-common && \
+    apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main' \
     pkg="openjdk-$JAVA_VERSION"; \
     if [ "$JAVA_RELEASE" = "JDK" ]; then \
         pkg="$pkg-jdk"; \
