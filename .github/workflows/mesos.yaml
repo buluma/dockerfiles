@@ -88,4 +88,4 @@ jobs:
         with:
           context: mesos/
           push: true
-          tags: buluma/mesos:latest
+          tags: buluma/mesos:0.28
