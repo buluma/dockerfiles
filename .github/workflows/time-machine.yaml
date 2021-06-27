@@ -19,6 +19,9 @@ jobs:
       - name: yamllint
         uses: ibiqlik/action-yamllint@v3
 
+      - name: test dir
+        run: ls -a time-machine/
+
       - name: Create Issue on Lint failure.
         if: failure()
         uses: buluma/create-issue-action@v2.0.0
@@ -36,6 +39,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: test dir
+      run: ls -a time-machine/
+
+    - name: Run in Dir above
+      run: cd time-machine && ls -a
+
+    - name: Where are we
+      run: pwd && ls -a
 
     - name: Build the Docker image
       # run: docker build . --file time-machine/Dockerfile --tag docker-time-machine-test:$(date +%s)
