@@ -11,4 +11,4 @@ This repository contains some dockerfiles of personally created docker images; I
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/buluma/docker-test.svg)](https://starchart.cc/buluma/docker-test)
+[![Stargazers over time](https://starchart.cc/buluma/dockerfiles.svg)](https://starchart.cc/buluma/dockerfiles)
