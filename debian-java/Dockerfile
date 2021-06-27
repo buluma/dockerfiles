@@ -4,24 +4,23 @@
 #
 #  vim:ts=4:sts=4:sw=4:et
 #
-#  https://github.com/harisekhon/Dockerfiles
+#  https://github.com/buluma/Dockerfiles
 #
 #  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback to help improve or steer this or other code I publish
 #
-#  https://www.linkedin.com/in/harisekhon
 #
 
 # currently on Jessie which doesn't have OpenJDK 8 yet
 #FROM debian:latest
-FROM debian:stretch
-MAINTAINER Hari Sekhon (https://www.linkedin.com/in/harisekhon)
+FROM debian:jessie
+MAINTAINER Michael Buluma
 
 LABEL Description="Java + Debian (OpenJDK)"
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ARG JAVA_VERSION=8
-ARG JAVA_RELEASE=JRE
+ARG JAVA_VERSION=7
+ARG JAVA_RELEASE=JDK
 
 RUN bash -c ' \
     set -euxo pipefail && \
