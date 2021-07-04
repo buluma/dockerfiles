@@ -89,4 +89,4 @@ jobs:
         with:
           context: zookeeper/
           push: true
-          tags: buluma/zookeeper:latest, buluma/zookeeper:3.7.0
+          tags: buluma/zookeeper:3.5.9

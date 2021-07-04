@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Michael Buluma
 
-ARG ZOOKEEPER_VERSION=3.7.0
+ARG ZOOKEEPER_VERSION=3.5.9
 ARG TAR=apache-zookeeper-${ZOOKEEPER_VERSION}.tar.gz
 
 ENV PATH $PATH:/zookeeper/bin
