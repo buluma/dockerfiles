@@ -27,7 +27,7 @@ if [ -n "$*" ]; then
 else
     export REPOS="bash-tools lib pylib perl-tools pytools" # spotify-tools
 fi
-curl -s https://raw.githubusercontent.com/HariSekhon/bash-tools/master/git_pull_make_repos.sh | bash
+# curl -s https://raw.githubusercontent.com/HariSekhon/bash-tools/master/git_pull_make_repos.sh | bash MBU
 
 # downgrading certifi package is a workaround so that dockerhub_show_tags.py will work with SSL
 #pip uninstall -y certifi && pip install certifi==2015.04.28
