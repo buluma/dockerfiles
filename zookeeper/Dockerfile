@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Michael Buluma
 
-ARG ZOOKEEPER_VERSION=3.6.3
+ARG ZOOKEEPER_VERSION=3.7.0
 ARG TAR=apache-zookeeper-${ZOOKEEPER_VERSION}.tar.gz
 
 ENV PATH $PATH:/zookeeper/bin
@@ -32,7 +32,7 @@ RUN set -eux && \
     rm -rf zookeeper/src zookeeper/docs && \
     apk del wget tar
 
-# EXPOSE 2181 3181 4181
+EXPOSE 2181 3181 4181
 
 COPY entrypoint.sh /
 
