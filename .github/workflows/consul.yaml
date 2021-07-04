@@ -1,11 +1,11 @@
 ---
-name: Consul-Dev
+name: Consul
 
 on:
   push:
     paths:
-      - 'consul-dev/**'
-      - '.github/workflows/consul-dev.yaml'
+      - 'consul/**'
+      - '.github/workflows/consul.yaml'
 
   schedule:
     - cron: '30 * * * *'
@@ -19,17 +19,17 @@ jobs:
         uses: ibiqlik/action-yamllint@v3
 
       - name: test dir
-        run: ls -a consul-dev/
+        run: ls -a consul/
         
       - name: Create Issue on Lint failure.
         if: failure()
         uses: buluma/create-issue-action@v2.0.0
         with:
-          title: consul-dev Lint Test Failed
+          title: consul Lint Test Failed
           token: ${{secrets.GITHUB_TOKEN}}
           assignees: ${{github.actor}}
           labels: bug
-          body: consul-dev Lint check failed for commit ${{github.sha}}
+          body: consul Lint check failed for commit ${{github.sha}}
 
   build:
 
@@ -39,27 +39,27 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: test dir
-      run: ls -a consul-dev/
+      run: ls -a consul/
 
     - name: Run in Dir above
-      run: cd consul-dev && ls -a
+      run: cd consul && ls -a
 
     - name: Where are we
       run: pwd && ls -a
 
     - name: Build the Docker image
       # run: docker build . --file jira/Dockerfile --tag docker-jira-test:$(date +%s)
-      run: cd consul-dev && pwd && ls -a && docker build . --file Dockerfile --tag docker-consul-dev:$(date +%s)
+      run: cd consul && pwd && ls -a && docker build . --file Dockerfile --tag docker-consul:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()
       uses: buluma/create-issue-action@v2.0.0
       with:
-        title: consul-dev Build Failed
+        title: consul Build Failed
         token: ${{secrets.GITHUB_TOKEN}}
         assignees: ${{github.actor}}
         labels: bug
-        body: consul-dev build failed for commit ${{github.sha}}
+        body: consul build failed for commit ${{github.sha}}
 
   push_to_registry:
     name: Push Docker image to Docker Hub.
@@ -85,6 +85,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: consul-dev/
+          context: consul/
           push: true
-          tags: buluma/consul-dev:latest
+          tags: buluma/consul:latest
