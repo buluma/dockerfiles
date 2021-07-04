@@ -13,30 +13,30 @@ on:
     - cron: '30 * * * *'
 
 jobs:
-  # yamllint:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: yamllint
-  #       uses: ibiqlik/action-yamllint@v3
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: yamllint
+        uses: ibiqlik/action-yamllint@v3
 
-  #     - name: test dir
-  #       run: ls -a zookeeper/
+      - name: test dir
+        run: ls -a zookeeper/
 
-  #     - name: Create Issue on Lint failure.
-  #       if: failure()
-  #       uses: buluma/create-issue-action@v2.0.0
-  #       with:
-  #         title: zookeeper Lint Test Failed
-  #         token: ${{secrets.GITHUB_TOKEN}}
-  #         assignees: ${{github.actor}}
-  #         labels: bug
-  #         body: zookeeper Lint check failed for commit ${{github.sha}}
+      - name: Create Issue on Lint failure.
+        if: failure()
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          title: zookeeper Lint Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
+          assignees: ${{github.actor}}
+          labels: bug
+          body: zookeeper Lint check failed for commit ${{github.sha}}
 
   build:
 
     runs-on: ubuntu-latest
-    # needs: yamllint
+    needs: yamllint
 
     steps:
     - uses: actions/checkout@v2
