@@ -60,11 +60,11 @@ jobs:
     - name: Push image.
       run: |
         # Push $php_version tag.
-        docker push buluma/zookeeper:3.4.13
+        docker push buluma/zookeeper:$(date +%s)
 
         # Push latest tag if building latest version.
-        docker tag buluma/zookeeper:$(date +%s) buluma/zookeeper:$(date +%s)
-          docker push buluma/zookeeper:latest
+        # docker tag buluma/zookeeper:$(date +%s) buluma/zookeeper:$(date +%s)
+        # docker push buluma/zookeeper:latest
 
 #     - name: Create Issue on Build failure.
 #       if: failure()
