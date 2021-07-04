@@ -4,7 +4,7 @@ name: Zookeeper
 on:
   push:
     branches:
-      - main
+      - zookeeper-3.6.3
     paths:
       - 'zookeeper/**'
       - '.github/workflows/zookeeper.yaml'
