@@ -1,8 +1,8 @@
 FROM alpine:latest
 MAINTAINER Michael Buluma
 
-ARG ZOOKEEPER_VERSION=3.4.13
-ARG TAR=zookeeper-${ZOOKEEPER_VERSION}.tar.gz
+ARG ZOOKEEPER_VERSION=3.7.0
+ARG TAR=apache-zookeeper-${ZOOKEEPER_VERSION}.tar.gz
 
 ENV PATH $PATH:/zookeeper/bin
 
@@ -18,14 +18,17 @@ RUN set -eux && \
 
 RUN set -eux && \
     apk add --no-cache wget tar && \
-    url="http://www.apache.org/dyn/closer.lua?filename=zookeeper/zookeeper-${ZOOKEEPER_VERSION}/${TAR}&action=download" && \
+    # url="http://www.apache.org/dyn/closer.lua?filename=zookeeper/zookeeper-${ZOOKEEPER_VERSION}/${TAR}&action=download" && \
+    url="https://downloads.apache.org/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/${TAR}" && \
     url_archive="http://archive.apache.org/dist/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/${TAR}" && \
     wget -t 5 --retry-connrefused -O "$TAR" "$url" || \
     wget -t 5 --retry-connrefused -O "$TAR" "$url_archive" && \
+    pwd && \
     tar zxf "${TAR}" && \
     rm -fv "${TAR}" && \
-    ln -sv /zookeeper-${ZOOKEEPER_VERSION} /zookeeper && \
-    cp -av /zookeeper/conf/zoo_sample.cfg /zookeeper/conf/zoo.cfg && \
+    ls -a . && \
+    ln -sv /apache-zookeeper-${ZOOKEEPER_VERSION} /zookeeper && \
+    cp -av zookeeper/conf/zoo_sample.cfg /zookeeper/conf/zoo.cfg && \
     rm -rf zookeeper/src zookeeper/docs && \
     apk del wget tar
 

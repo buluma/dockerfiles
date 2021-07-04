@@ -11,7 +11,7 @@
 #  https://www.linkedin.com/in/harisekhon
 #
 
-REPO := harisekhon/zookeeper
+REPO := buluma/zookeeper
 
 include ../Makefile.in
 
