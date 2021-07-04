@@ -29,10 +29,10 @@ RUN set -eux && \
     ls -a . && \
     ln -sv /apache-zookeeper-${ZOOKEEPER_VERSION} /zookeeper && \
     cp -av zookeeper/conf/zoo_sample.cfg /zookeeper/conf/zoo.cfg && \
-    # rm -rf zookeeper/src zookeeper/docs && \
-    # apk del wget tar
+    rm -rf zookeeper/src zookeeper/docs && \
+    apk del wget tar
 
-EXPOSE 2181 3181 4181
+# EXPOSE 2181 3181 4181
 
 COPY entrypoint.sh /
 
