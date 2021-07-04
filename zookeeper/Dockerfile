@@ -26,7 +26,7 @@ RUN set -eux && \
     pwd && \
     tar zxf "${TAR}" && \
     rm -fv "${TAR}" && \
-    ls -a /zookeeper-${ZOOKEEPER_VERSION} && \
+    ls -a . && \
     ln -sv /zookeeper-${ZOOKEEPER_VERSION} /zookeeper && ls -a zookeeper/conf && \
     cp -av zookeeper/conf/zoo_sample.cfg /zookeeper/conf/zoo.cfg && \
     # rm -rf zookeeper/src zookeeper/docs && \
