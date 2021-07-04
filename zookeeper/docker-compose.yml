@@ -15,7 +15,7 @@
 version: '3'
 services:
   zookeeper:
-    image: harisekhon/zookeeper:${VERSION:-latest}
+    image: buluma/zookeeper:${VERSION:-latest}
     ports:
       - 2181:2181
       - 3181:3181

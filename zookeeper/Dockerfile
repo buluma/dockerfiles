@@ -2,7 +2,7 @@ FROM alpine:latest
 MAINTAINER Michael Buluma
 
 ARG ZOOKEEPER_VERSION=3.6.3
-ARG TAR=zookeeper-${ZOOKEEPER_VERSION}.tar.gz
+ARG TAR=apache-zookeeper-${ZOOKEEPER_VERSION}.tar.gz
 
 ENV PATH $PATH:/zookeeper/bin
 
