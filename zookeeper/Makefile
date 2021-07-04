@@ -11,6 +11,8 @@
 #  https://www.linkedin.com/in/harisekhon
 #
 
-REPO := harisekhon/nagios-plugins:centos
+REPO := harisekhon/zookeeper
 
 include ../Makefile.in
+
+MAP_PORTS := 2181 3181 4181
