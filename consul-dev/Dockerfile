@@ -37,15 +37,15 @@ WORKDIR /
 
 #ADD https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip
 
-# RUN set -eux && \
-#     yum install -y wget unzip net-tools && \
-#     wget -t 100 --retry-connrefused -O "consul_${CONSUL_VERSION}_linux_amd64.zip" "https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip" && \
-#     unzip "consul_${CONSUL_VERSION}_linux_amd64.zip" && \
-#     rm -fv "consul_${CONSUL_VERSION}_linux_amd64.zip" && \
-#     yum remove -y wget unzip && \
-#     yum autoremove -y && \
-#     yum clean all && \
-#     rm -rf /var/cache/yum
+RUN set -eux && \
+    yum install -y wget unzip net-tools && \
+    wget -t 100 --retry-connrefused -O "consul_${CONSUL_VERSION}_linux_amd64.zip" "https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip" && \
+    unzip -o "consul_${CONSUL_VERSION}_linux_amd64.zip" && \
+    rm -fv "consul_${CONSUL_VERSION}_linux_amd64.zip" && \
+    yum remove -y wget unzip && \
+    yum autoremove -y && \
+    yum clean all && \
+    rm -rf /var/cache/yum
 
 #COPY entrypoint.sh /
 
