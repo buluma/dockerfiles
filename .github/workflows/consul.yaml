@@ -89,4 +89,4 @@ jobs:
         with:
           context: consul/
           push: true
-          tags: buluma/consul:latest
+          tags: buluma/consul:1.9.7
