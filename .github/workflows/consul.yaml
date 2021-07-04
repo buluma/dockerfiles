@@ -3,6 +3,8 @@ name: Consul
 
 on:
   push:
+    branches:
+      - consul-1.9.7
     paths:
       - 'consul/**'
       - '.github/workflows/consul.yaml'
