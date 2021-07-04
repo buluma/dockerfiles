@@ -25,8 +25,7 @@ RUN set -eux && \
     wget -t 5 --retry-connrefused -O "$TAR" "$url_archive" && \
     tar zxf "${TAR}" && \
     rm -fv "${TAR}" && \
-    ln -sv /zookeeper-${ZOOKEEPER_VERSION} /zookeeper && \
-    ls -a /zookeeper
+    ln -sv /zookeeper-${ZOOKEEPER_VERSION} /zookeeper && ls -a /zookeeper
     # cp -av /zookeeper/conf/zoo_sample.cfg /zookeeper/conf/zoo.cfg && \
     # rm -rf zookeeper/src zookeeper/docs && \
     # apk del wget tar
