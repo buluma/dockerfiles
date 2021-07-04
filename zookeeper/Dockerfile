@@ -19,8 +19,8 @@ RUN set -eux && \
 RUN set -eux && \
     apk add --no-cache wget tar && \
     # url="http://www.apache.org/dyn/closer.lua?filename=zookeeper/zookeeper-${ZOOKEEPER_VERSION}/${TAR}&action=download" && \
-    url="https://downloads.apache.org/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/${TAR}&action=download" && \
-    url_archive="http://archive.apache.org/dist/zookeeper/apache-zookeeper-${ZOOKEEPER_VERSION}/${TAR}" && \
+    url="https://downloads.apache.org/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/${TAR}" && \
+    url_archive="http://archive.apache.org/dist/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/${TAR}" && \
     wget -t 5 --retry-connrefused -O "$TAR" "$url" || \
     wget -t 5 --retry-connrefused -O "$TAR" "$url_archive" && \
     tar zxf "${TAR}" && \
