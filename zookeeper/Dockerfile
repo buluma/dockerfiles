@@ -23,8 +23,10 @@ RUN set -eux && \
     url_archive="http://archive.apache.org/dist/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/${TAR}" && \
     wget -t 5 --retry-connrefused -O "$TAR" "$url" || \
     wget -t 5 --retry-connrefused -O "$TAR" "$url_archive" && \
+    pwd && \
     tar zxf "${TAR}" && \
     rm -fv "${TAR}" && \
+    ls -a /zookeeper-${ZOOKEEPER_VERSION} && \
     ln -sv /zookeeper-${ZOOKEEPER_VERSION} /zookeeper && ls -a zookeeper/conf && \
     cp -av zookeeper/conf/zoo_sample.cfg /zookeeper/conf/zoo.cfg && \
     # rm -rf zookeeper/src zookeeper/docs && \
