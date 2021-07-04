@@ -52,19 +52,19 @@ jobs:
       run: cd zookeeper && pwd && ls -a && docker build . --file Dockerfile --tag docker-zookeeper-test:$(date +%s)
 
     - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Push image.
-        run: |
-          # Push $php_version tag.
-          docker push buluma/zookeeper:3.4.13
+      run: |
+        # Push $php_version tag.
+        docker push buluma/zookeeper:3.4.13
 
-          # Push latest tag if building latest version.
-          docker tag buluma/php-apache:${{ matrix.php_version }} buluma/php-apache:latest
-            docker push buluma/php-apache:latest
+        # Push latest tag if building latest version.
+        docker tag buluma/php-apache:${{ matrix.php_version }} buluma/php-apache:latest
+          docker push buluma/php-apache:latest
 
 #     - name: Create Issue on Build failure.
 #       if: failure()
