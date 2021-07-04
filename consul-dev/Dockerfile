@@ -19,8 +19,9 @@
 # Error relocating ./consul: __fprintf_chk: symbol not foundError relocating ./consul: __fprintf_chk: symbol not found
 # rather than downloading glibc with a tonne of extra commands, just switch to debian
 #FROM harisekhon/alpine-github:latest
-FROM harisekhon/centos-github:latest
-MAINTAINER Hari Sekhon (https://www.linkedin.com/in/harisekhon)
+# FROM harisekhon/centos-github:latest
+FROM buluma/consul-dev:latest
+MAINTAINER Michael Buluma
 
 ARG CONSUL_VERSION=1.4.2
 
