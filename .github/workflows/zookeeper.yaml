@@ -49,7 +49,7 @@ jobs:
 
     - name: Build the Docker image
       # run: docker build . --file jira/Dockerfile --tag docker-jira-test:$(date +%s)
-      run: cd zookeeper && pwd && ls -a && docker build . --file Dockerfile --tag docker-zookeeper-test:$(date +%s)
+      run: cd zookeeper && pwd && ls -a && docker build . --file Dockerfile --tag zookeeper:$(date +%s)
 
     - name: Login to DockerHub
       uses: docker/login-action@v1
@@ -63,8 +63,8 @@ jobs:
         docker push buluma/zookeeper:3.4.13
 
         # Push latest tag if building latest version.
-        docker tag buluma/php-apache:${{ matrix.php_version }} buluma/php-apache:latest
-          docker push buluma/php-apache:latest
+        docker tag buluma/zookeeper:$(date +%s) buluma/zookeeper:$(date +%s)
+          docker push buluma/zookeeper:latest
 
 #     - name: Create Issue on Build failure.
 #       if: failure()
