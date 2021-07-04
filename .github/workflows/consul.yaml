@@ -3,6 +3,8 @@ name: Consul
 
 on:
   push:
+    branches:
+      - consul-1.9.7
     paths:
       - 'consul/**'
       - '.github/workflows/consul.yaml'
@@ -87,4 +89,4 @@ jobs:
         with:
           context: consul/
           push: true
-          tags: buluma/consul:latest
+          tags: buluma/consul:1.9.7

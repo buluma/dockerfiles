@@ -23,7 +23,7 @@
 FROM buluma/consul-dev:latest
 MAINTAINER Michael Buluma
 
-ARG CONSUL_VERSION=1.4.2
+ARG CONSUL_VERSION=1.9.7
 
 ENV PATH $PATH:/
 
