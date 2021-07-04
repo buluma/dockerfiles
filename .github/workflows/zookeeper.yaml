@@ -4,7 +4,7 @@ name: Zookeeper
 on:
   push:
     branches:
-      - zookeeper-3.7.0
+      - zookeeper-3.6.3
     paths:
       - 'zookeeper/**'
       - '.github/workflows/zookeeper.yaml'
@@ -89,4 +89,4 @@ jobs:
         with:
           context: zookeeper/
           push: true
-          tags: buluma/zookeeper:latest, buluma/zookeeper:3.7.0
+          tags: buluma/zookeeper:3.6.3
