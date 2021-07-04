@@ -26,7 +26,7 @@ RUN set -eux && \
     tar zxf "${TAR}" && \
     rm -fv "${TAR}" && \
     ln -sv /zookeeper-${ZOOKEEPER_VERSION} /zookeeper && \
-    ls -a zookeeper
+    ls -a /zookeeper/conf
     # cp -av /zookeeper/conf/zoo_sample.cfg /zookeeper/conf/zoo.cfg && \
     # rm -rf zookeeper/src zookeeper/docs && \
     # apk del wget tar
