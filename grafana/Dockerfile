@@ -3,7 +3,7 @@
 #
 
 FROM debian:jessie
-MAINTAINER buluma <noreply@buluma.co.ke>
+LABEL maintainer="buluma <ops@buluma.me.ke>"
 
 ENV GRAFANA_VERSION=4.0.1-1480694114
 ENV GRAFANA_FILE=grafana_${GRAFANA_VERSION}_amd64.deb

@@ -5,7 +5,7 @@
 #
 
 FROM php:5.6-apache
-MAINTAINER kev<noreply@easypi.pro>
+MAINTAINER buluma <noreply@buluma.co.ke>
 
 RUN a2enmod rewrite
 
@@ -13,7 +13,6 @@ RUN set -xe \
     && apt-get update \
     && apt-get install -y clamav \
                           graphviz \
-                          libicu52 \
                           libicu-dev \
                           libjpeg62-turbo \
                           libjpeg-dev \
@@ -21,8 +20,7 @@ RUN set -xe \
                           libldap2-dev \
                           libmcrypt4 \
                           libmcrypt-dev \
-                          libpng12-0 \
-                          libpng12-dev \
+                          libpng-dev \
                           libpspell-dev \
                           libxml2 \
                           libxml2-dev \

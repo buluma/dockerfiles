@@ -1,5 +1,5 @@
 FROM debian:sid-slim
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+LABEL maintainer="buluma <ops@buluma.me.ke>"
 
 RUN apt-get update && apt-get install -y \
 	dirmngr \
