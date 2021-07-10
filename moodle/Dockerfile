@@ -42,7 +42,7 @@ RUN set -xe \
                          libjpeg-dev \
                          libldap2-dev \
                          libmcrypt-dev \
-                         libpng12-dev \
+                         libpng-dev \
                          libpspell-dev \
                          libxml2-dev \
     && rm -rf /var/lib/apt/lists/*
