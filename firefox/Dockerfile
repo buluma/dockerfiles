@@ -25,9 +25,7 @@ RUN apt-get update && apt-get install -y \
 
 ENV LANG en-US
 
-# RUN pwd && ls -a
-
-# COPY local.conf /etc/fonts/local.conf
+COPY local.conf /etc/fonts/local.conf
 
 RUN echo 'pref("browser.tabs.remote.autostart", false);' >> /etc/firefox/syspref.js
 
