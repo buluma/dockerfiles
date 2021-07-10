@@ -1,4 +1,5 @@
-FROM alpine:latest
+# FROM alpine:latest
+FROM alpine:3.13
 LABEL maintainer "buluma <ops@buluma.me.ke>"
 
 RUN apk add --no-cache \
