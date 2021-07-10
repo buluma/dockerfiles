@@ -42,7 +42,7 @@ RUN apt-get update && apt-get -y install \
 	libgtk-3-0 \
 	libx11-xcb1 \
 	libxkbfile1 \
-	slack-desktop \
+	# slack-desktop \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
