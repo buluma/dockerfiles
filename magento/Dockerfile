@@ -69,4 +69,5 @@ RUN set -xe \
     && tar xzf ${MAGENTO_FILE} --strip 1                  \
     && rm ${MAGENTO_FILE}                                 \
     && chown -R www-data:www-data .                       \
+    && composer update                                    \
     && composer install
