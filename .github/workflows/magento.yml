@@ -1,0 +1,61 @@
+---
+name: Magento
+
+on:
+  push:
+    paths:
+      - 'magento/**'
+      - '.github/workflows/magento.yaml'
+      
+  schedule:
+    - cron: '30 * * * *'
+
+jobs:
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: yamllint
+        uses: ibiqlik/action-yamllint@v3
+
+      - name: test dir
+        run: ls -a magento/
+
+      - name: Create Issue on Lint failure.
+        if: failure()
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          title: magento Lint Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
+          assignees: ${{github.actor}}
+          labels: bug
+          body: magento Lint check failed for commit ${{github.sha}}
+
+  build:
+
+    runs-on: ubuntu-latest
+    needs: yamllint
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: test dir
+      run: ls -a magento/
+
+    - name: Run in Dir above
+      run: cd magento && ls -a
+
+    - name: Where are we
+      run: pwd && ls -a
+
+    - name: Build the Docker image
+      run: docker build . --file magento/Dockerfile --tag docker-magento-test:$(date +%s)
+
+    - name: Create Issue on Build failure.
+      if: failure()
+      uses: buluma/create-issue-action@v2.0.0
+      with:
+        title: magento Build Failed
+        token: ${{secrets.GITHUB_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: bug
+        body: magento build failed for commit ${{github.sha}}
