@@ -45,7 +45,8 @@ jobs:
       run: cd skype && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file skype/Dockerfile --tag docker-skype-test:$(date +%s)
+      # run: docker build . --file skype/Dockerfile --tag docker-skype-test:$(date +%s)
+      run: cd skype && pwd && ls -a && docker build . --file Dockerfile --tag docker-skype-test:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()
