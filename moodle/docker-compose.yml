@@ -1,3 +1,4 @@
+---
 moodle:
   image: vimagick/moodle
   ports:

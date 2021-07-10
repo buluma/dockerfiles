@@ -1,3 +1,4 @@
+---
 alpha:
   listen: 127.0.0.1:22121
   hash: fnv1a_64
