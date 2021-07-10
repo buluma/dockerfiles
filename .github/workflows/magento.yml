@@ -8,7 +8,7 @@ on:
       - '.github/workflows/magento.yaml'
       
   schedule:
-    - cron: '30 * * * *'
+    - cron: '40 * * * *'
 
 jobs:
   yamllint:
@@ -48,7 +48,7 @@ jobs:
       run: pwd && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file magento/Dockerfile --tag docker-magento-test:$(date +%s)
+      run: docker build . --file magento/Dockerfile --tag docker-magento:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()
