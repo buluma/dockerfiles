@@ -56,7 +56,7 @@ jobs:
         token: ${{secrets.GITHUB_TOKEN}}
         assignees: ${{github.actor}}
         labels: bug
-        body: Lint check failed for commit ${{github.sha}}
+        body: John - Build failed for commit ${{github.sha}}
 
   push_to_registry:
     name: Push Docker image to Docker Hub.
