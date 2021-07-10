@@ -45,7 +45,8 @@ jobs:
       run: cd john && ls -a
 
     - name: Build the Docker image
-      run: docker build . --file john/Dockerfile --tag docker-john-test:$(date +%s)
+      # run: docker build . --file john/Dockerfile --tag docker-john-test:$(date +%s)
+      run: cd john && pwd && ls -a && docker build . --file Dockerfile --tag docker-john-test:$(date +%s)
 
     - name: Create Issue on Build failure.
       if: failure()
