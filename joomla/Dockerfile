@@ -15,7 +15,7 @@ VOLUME /var/www/html
 # Define Joomla version and expected SHA1 signature
 ENV JOOMLA_VERSION 3.9.28
 ENV JOOMLA_UPSTREAM_VERSION 3.9.28
-ENV JOOMLA_SHA1 7bfdf95a11b7398b3f73f29bca73736a548095c5
+ENV JOOMLA_SHA1 d619164e99d5fbe6c7e672c9a07d8df3ff6a9c81
 
 # Download package and extract to web volume
 RUN curl -o joomla.zip -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.zip \
