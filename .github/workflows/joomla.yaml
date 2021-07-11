@@ -1,0 +1,62 @@
+---
+name: Joomla
+
+on:
+  push:
+    paths:
+      - 'joomla/**'
+      - '.github/workflows/joomla.yaml'
+
+  schedule:
+    - cron: '50 * * * *'
+
+jobs:
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: yamllint
+        uses: ibiqlik/action-yamllint@v3
+
+      - name: test dir
+        run: ls -a joomla/
+
+      - name: Create Issue on Lint failure.
+        if: failure()
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          title: Joomla Lint Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
+          assignees: ${{github.actor}}
+          labels: bug
+          body: Joomla Lint check failed for commit ${{github.sha}}
+
+  build:
+
+    runs-on: ubuntu-latest
+    needs: yamllint
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: test dir
+      run: ls -a joomla/
+
+    - name: Run in Dir above
+      run: cd joomla && ls -a
+
+    - name: Where are we
+      run: pwd && ls -a
+
+    - name: Build the Docker image
+      # run: docker build . --file jira/Dockerfile --tag docker-jira-test:$(date +%s)
+      run: cd joomla && pwd && ls -a && docker build . --file Dockerfile --tag docker-joomla:$(date +%s)
+
+    - name: Create Issue on Build failure.
+      if: failure()
+      uses: buluma/create-issue-action@v2.0.0
+      with:
+        title: Joomla Build Failed
+        token: ${{secrets.GITHUB_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: bug
+        body: Joomla build failed for commit ${{github.sha}}
