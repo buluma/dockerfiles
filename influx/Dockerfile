@@ -1,5 +1,6 @@
 FROM golang:1.9.2-stretch as builder
-COPY . /go/src/github.com/influxdata/influxdata-docker/dockerlib
+# COPY . /go/src/github.com/influxdata/influxdata-docker/dockerlib
+COPY . dockerlib/
 RUN set -xe && \
     go get -d github.com/influxdata/influxdata-docker/dockerlib && \
     go install github.com/influxdata/influxdata-docker/dockerlib
