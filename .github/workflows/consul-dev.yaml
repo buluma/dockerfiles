@@ -8,7 +8,8 @@ on:
       - '.github/workflows/consul-dev.yaml'
 
   schedule:
-    - cron: '30 * * * *'
+    # - cron: '30 * * * *'
+    - cron: '22 7 * * *'
 
 jobs:
   yamllint:

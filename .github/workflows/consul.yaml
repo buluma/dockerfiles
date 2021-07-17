@@ -10,7 +10,8 @@ on:
       - '.github/workflows/consul.yaml'
 
   schedule:
-    - cron: '30 * * * *'
+    # - cron: '30 * * * *'
+    - cron: '25 7 * * *'
 
 jobs:
   yamllint:

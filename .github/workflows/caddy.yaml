@@ -8,7 +8,8 @@ on:
       - '.github/workflows/caddy.yaml'
 
   schedule:
-    - cron: '30 * * * *'
+    # - cron: '30 * * * *'
+    - cron: '22 4 * * *'
 
 jobs:
   yamllint:
