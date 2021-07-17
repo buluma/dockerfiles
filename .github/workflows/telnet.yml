@@ -1,5 +1,5 @@
 ---
-name: Consul
+name: Telnet
 
 on:
   push:
@@ -27,11 +27,11 @@ jobs:
         if: failure()
         uses: buluma/create-issue-action@v2.0.0
         with:
-          title: consul Lint Test Failed
+          title: Telnet Lint Test Failed
           token: ${{secrets.GITHUB_TOKEN}}
           assignees: ${{github.actor}}
           labels: bug
-          body: consul Lint check failed for commit ${{github.sha}}
+          body: Telnet Lint check failed for commit ${{github.sha}}
 
   build:
 
