@@ -8,7 +8,7 @@ on:
       - '.github/workflows/alpine.yaml'
 
   schedule:
-    - cron: '30 * * * *'
+    - cron: '* 3 * * *'
 
 jobs:
   yamllint:
