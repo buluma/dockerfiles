@@ -9,7 +9,7 @@ LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 # RUN apk add --no-cache --virtual \ https://github.com/jessfraz/dockerfiles/pull/561
 # busybox-extras
 
-RUN apk add --no-cache /
+RUN apk add --no-cache \
 	busybox-extras
 
 ENTRYPOINT [ "telnet" ]
