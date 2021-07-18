@@ -6,7 +6,7 @@
 # 	exit 1
 # fi
 
-if [[ -n "$TOKEN" ]]; then
+if [[ -n "${{ secrets.GITHUB_TOKEN }}" ]]; then
 	# GITHUB_TOKEN=$TOKEN
 	GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
 fi
