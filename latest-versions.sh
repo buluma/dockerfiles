@@ -153,9 +153,9 @@ projects=(
 	# maxmind/libmaxminddb
 	# openresty/lua-resty-core
 	# openresty/lua-resty-lrucache
-	# hashicorp/terraform
+	hashicorp/terraform
 	# kdlucas/byte-unixbench
-	# mitchellh/vagrant
+	mitchellh/vagrant
 	# hashicorp/vault
 	# containrrr/watchtower
 	# wireguard/wireguard-tools
