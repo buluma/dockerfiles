@@ -26,8 +26,8 @@ image: ## Build a Dockerfile (ex. DIR=telnet).
 	docker build --rm --force-rm -t $(REGISTRY)/$(subst /,:,$(patsubst %/,%,$(DIR))) ./$(DIR)
 
 .PHONY: test
-# test: dockerfiles shellcheck ## Runs the tests on the repository.-e SC2059
-test: dockerfiles shellcheck -e SC2166 ## Runs the tests on the repository.
+test: dockerfiles shellcheck ## Runs the tests on the repository.
+# test: dockerfiles shellcheck -e SC2166 ## Runs the tests on the repository.
 
 .PHONY: dockerfiles
 dockerfiles: ## Tests the changes to the Dockerfiles build.
