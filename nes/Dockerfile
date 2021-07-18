@@ -8,7 +8,11 @@
 # 	jess/nes /games/zelda.rom
 #
 FROM debian:sid-slim
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN apt-get update && apt-get install -y \
 	binutils \

@@ -1,5 +1,9 @@
 FROM debian:bullseye-slim
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 # Install bash and other deps so we have them.
 RUN apt-get update && apt-get install -y \

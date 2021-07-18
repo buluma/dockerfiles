@@ -1,4 +1,10 @@
 FROM golang:alpine AS runc
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
+
 ENV RUNC_VERSION 9f9c96235cc97674e935002fc3d78361b696a69e
 RUN apk add --no-cache \
 	bash \

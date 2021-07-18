@@ -8,7 +8,11 @@
 # 	ansible all -m ping
 #
 FROM python:3-alpine
-LABEL maintainer "Christian Koep <christiankoep@gmail.com>"
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN builddeps=' \
 		musl-dev \

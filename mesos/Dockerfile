@@ -1,6 +1,10 @@
 FROM harisekhon/debian-java:jre7
 # FROM buluma/debian-java:jre7
-MAINTAINER Michael Buluma
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ARG MESOS_VERSION=0.28.2
 

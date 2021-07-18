@@ -8,6 +8,11 @@
 #	jess/zoom-us
 
 FROM debian:sid-slim
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV DEBIAN_FRONTEND noninteractive
 

@@ -1,5 +1,11 @@
 FROM alpine:3.13
 
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
+
 ENV TWEMPROXY_VERSION 0.4.1
 ENV TWEMPROXY_CONFIG_DIR /etc/twemproxy
 ENV TWEMPROXY_DOWNLOAD_URL https://github.com/twitter/twemproxy/archive/v${TWEMPROXY_VERSION}.tar.gz

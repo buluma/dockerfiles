@@ -10,7 +10,11 @@
 # 	jess/couchpotato
 #
 FROM python:2-alpine
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 # machine parsable metadata, for https://github.com/pycampers/dockapt
 LABEL "registry_image"="r.j3ss.co/couchpotato"

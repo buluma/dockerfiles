@@ -1,8 +1,8 @@
 FROM alpine:3.13
 
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
-ARG TZ="Africa/Nairobi"
+ENV TZ 'Afria/Nairobi'
 
 ENV TZ ${TZ}
 ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1

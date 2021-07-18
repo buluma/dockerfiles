@@ -1,10 +1,10 @@
 FROM alpine:3.14
 
-LABEL maintainer="mritd <mritd@linux.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
-ARG TZ="Asia/Shanghai"
+ENV TZ 'Afria/Nairobi'
 
-ENV TZ ${TZ} 
+ENV TZ ${TZ}
 ENV MATTERMOST_VERSION 5.25.2
 ENV MATTERMOST_HOME /mattermost
 ENV MATTERMOST_DATA_DIR /data

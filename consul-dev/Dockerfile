@@ -54,7 +54,11 @@
 # CMD ["/consul", "agent", "-dev", "-data-dir", "/tmp", "-client", "0.0.0.0"]
 
 FROM golang:latest as builder
-MAINTAINER Michael Buluma
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV PATH /go/bin:/usr/local/go/bin:$PATH
 ENV GOPATH /go

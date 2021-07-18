@@ -15,7 +15,11 @@
 #	buluma/slack "$@"
 
 FROM debian:bullseye-slim
-LABEL maintainer "Jessie Frazelle <ops@buluma.co.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 # Tell debconf to run in non-interactive mode
 ENV DEBIAN_FRONTEND noninteractive

@@ -3,7 +3,11 @@
 #
 
 FROM debian:jessie
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV GRAFANA_VERSION=4.0.1-1480694114
 ENV GRAFANA_FILE=grafana_${GRAFANA_VERSION}_amd64.deb

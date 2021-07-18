@@ -1,6 +1,6 @@
 FROM openjdk:11.0.2-jre-slim-stretch
 
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
 
 ENV TZ 'Afria/Nairobi'
 

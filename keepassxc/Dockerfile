@@ -9,7 +9,11 @@
 #		jess/keepassxc
 #
 FROM alpine:latest
-LABEL maintainer "Christian Koep <christiankoep@gmail.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV KEEPASSXC_VERSION 2.6.6
 

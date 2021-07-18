@@ -24,9 +24,11 @@ RUN set -e \
 
 FROM alpine:3.13 AS dist
 
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
 
 ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 # See https://caddyserver.com/docs/conventions#file-locations for details
 ENV XDG_CONFIG_HOME /config

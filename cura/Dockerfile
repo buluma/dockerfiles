@@ -1,5 +1,11 @@
 FROM ubuntu:bionic
 
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
+
 RUN apt-get update && apt-get install -y \
 	ca-certificates \
 	libgfortran4 \

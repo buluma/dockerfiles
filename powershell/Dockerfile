@@ -1,5 +1,9 @@
 FROM debian:stretch-slim
-LABEL maintainer "Christian Koep <christiankoep@gmail.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV POWERSHELL_VERSION 7.1.3
 

@@ -27,6 +27,12 @@
 #
 
 FROM ubuntu:16.04
+#TODO upgrade to 20.04
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 # environment settings
 ENV DEBIAN_FRONTEND="noninteractive"

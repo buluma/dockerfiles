@@ -13,7 +13,11 @@
 # currently on Jessie which doesn't have OpenJDK 8 yet
 #FROM debian:latest
 FROM debian:jessie
-MAINTAINER Michael Buluma
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 LABEL Description="Java + Debian (OpenJDK)"
 

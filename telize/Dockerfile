@@ -1,4 +1,9 @@
 FROM shurshun/openresty:latest
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 STOPSIGNAL SIGTERM
 

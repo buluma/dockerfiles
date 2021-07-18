@@ -1,8 +1,8 @@
 FROM alpine:3.10
 
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
-ARG TZ="Africa/Nairobi"
+ENV TZ 'Afria/Nairobi'
 
 ENV TZ ${TZ}
 ENV NETATALK_VERSION 3.1.12

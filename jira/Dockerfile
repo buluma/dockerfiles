@@ -1,8 +1,8 @@
 FROM atlassian/jira-software:8.10.0
 
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
-ARG TZ="Africa/Nairobi"
+ENV TZ 'Afria/Nairobi'
 
 ENV TZ ${TZ}
 ENV AGENT_PATH /opt/atlassian-agent.jar

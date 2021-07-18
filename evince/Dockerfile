@@ -8,7 +8,11 @@
 #
 
 FROM alpine:latest
-LABEL maintainer "Christian Koep <christiankoep@gmail.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN apk --no-cache add \
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community \

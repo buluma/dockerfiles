@@ -1,8 +1,8 @@
 FROM alpine:3.10
 
-LABEL maintainer="mritd <mritd@linux.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
-ARG TZ='Asia/Shanghai'
+ENV TZ 'Afria/Nairobi'
 
 ENV TZ ${TZ}
 ENV OBFS_DOWNLOAD_URL https://github.com/shadowsocks/simple-obfs.git

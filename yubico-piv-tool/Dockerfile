@@ -7,7 +7,12 @@
 #	jess/yubico-piv-tool
 #
 FROM ubuntu:16.04
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+#TODO upgrade to ubuntu20.04
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN apt-get update && apt-get install -y \
 	software-properties-common \

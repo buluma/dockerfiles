@@ -1,5 +1,9 @@
 FROM r.j3ss.co/bcc
-MAINTAINER Jessica Frazelle <jess@linux.com>
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV PATH /usr/share/bcc/tools:$PATH
 

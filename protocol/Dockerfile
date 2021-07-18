@@ -1,5 +1,9 @@
 FROM alpine:latest
-LABEL maintainer "James Abley <james.abley@gmail.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN buildDeps=' \
                ca-certificates \

@@ -6,7 +6,12 @@
 #	jess/inkscape
 #
 FROM ubuntu:16.04
-LABEL maintainer "Daniel Romero <infoslack@gmail.com>"
+#TODO Upgrade to 20.04
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV DEBIAN_FRONTEND noninteractive
 

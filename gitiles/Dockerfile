@@ -1,5 +1,9 @@
 FROM l.gcr.io/google/bazel:latest
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 # https://gerrit.googlesource.com/gitiles/
 ENV GITILES_VERSION v0.4

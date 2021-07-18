@@ -1,5 +1,9 @@
 FROM r.j3ss.co/wireguard:install
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN apt update && apt -y install \
 	bash \

@@ -6,5 +6,13 @@ RUN set -xe && \
     go install github.com/influxdata/influxdata-docker/dockerlib
 
 FROM buildpack-deps:stretch-scm
+
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
+
 COPY --from=builder /go/bin/dockerlib /usr/bin/dockerlib
+
 ENTRYPOINT ["/usr/bin/dockerlib"]

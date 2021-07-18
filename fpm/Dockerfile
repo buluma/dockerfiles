@@ -1,8 +1,8 @@
 FROM ruby:2.7.2-alpine3.12
 
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
-ARG TZ="Africa/Nairobi"
+ENV TZ 'Afria/Nairobi'
 
 ENV TZ ${TZ}
 

@@ -20,7 +20,11 @@
 
 # Base docker image
 FROM debian:bullseye-slim
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 # Install Gparted and its dependencies
 RUN apt-get update && apt-get install -y \

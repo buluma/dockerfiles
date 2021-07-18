@@ -1,5 +1,9 @@
 FROM php:5.6-apache
-MAINTAINER Michael Buluma <ops@buluma.co.ke> (@buluma)
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 # Enable Apache Rewrite Module
 RUN a2enmod rewrite

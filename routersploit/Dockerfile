@@ -1,5 +1,9 @@
 FROM debian:buster-slim
-LABEL maintainer "Christian Koep <christiankoep@gmail.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV ROUTERSPLOIT_VERSION v3.4.0
 

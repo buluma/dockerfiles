@@ -4,7 +4,11 @@
 #	jess/telnet towel.blinkenlights.nl
 #
 FROM alpine:latest
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN apk add --no-cache \
 	busybox-extras

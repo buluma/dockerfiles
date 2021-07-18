@@ -24,7 +24,11 @@
 #
 
 FROM debian:bullseye-slim
-LABEL maintainer "Christian Koep <christiankoep@gmail.com>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN apt-get update && apt-get -y install \
 	apt-transport-https \

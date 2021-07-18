@@ -6,6 +6,11 @@
 #  -p 8181:8181 \
 #  r.j3ss.co/plexpy
 FROM alpine:latest
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 # Install required packages.
 RUN apk add --no-cache \

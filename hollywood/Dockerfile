@@ -1,5 +1,9 @@
 FROM ubuntu:20.04
-LABEL maintainer "Michael Buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	byobu \

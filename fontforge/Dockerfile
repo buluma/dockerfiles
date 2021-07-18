@@ -11,7 +11,12 @@
 
 # Base docker image
 FROM ubuntu:16.04
-LABEL maintainer "Axel Svensson <foss@axelsvensson.com>"
+#TODO update to ubuntu20
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN  apt-get update \
   && apt-get install -y \

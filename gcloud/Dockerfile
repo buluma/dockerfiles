@@ -1,5 +1,11 @@
 FROM python:2-alpine
 
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
+
 ENV PATH $PATH:/usr/src/google-cloud-sdk/bin
 ENV CLOUD_SDK_DOCKER_VERSION 348.0.0
 

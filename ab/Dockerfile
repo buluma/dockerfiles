@@ -5,7 +5,7 @@
 # 	jess/ab
 #
 FROM alpine:latest
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
 
 RUN apk --no-cache add \
 	apache2-ssl \

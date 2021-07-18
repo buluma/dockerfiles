@@ -3,7 +3,11 @@
 #
 
 FROM php:5.6-apache
-MAINTAINER Michael Buluma
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN a2enmod rewrite
 

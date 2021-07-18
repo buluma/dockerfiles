@@ -5,11 +5,11 @@
 # rather than downloading glibc with a tonne of extra commands, just switch to debian
 #FROM alpine:latest
 FROM debian:latest
-MAINTAINER Michael Buluma
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
 
-ARG CONSUL_VERSION=1.9.7
+ENV TZ 'Afria/Nairobi'
 
-ENV PATH $PATH:/
+ENV TZ ${TZ}
 
 LABEL Description="HashiCorp's Consul minimal" \
       "Consul Version"="$CONSUL_VERSION"

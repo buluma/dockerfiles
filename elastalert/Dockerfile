@@ -1,8 +1,8 @@
 FROM python:3.6.10-alpine3.11
 
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
-ARG TZ="Africa/Nairobi"
+ENV TZ 'Afria/Nairobi'
 
 ENV TZ ${TZ}
 ENV VERSION v0.2.4

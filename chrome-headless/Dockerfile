@@ -1,8 +1,10 @@
 FROM ubuntu:18.04
 
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
 
 ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV CHROME_APT "deb https://dl.google.com/linux/chrome/deb/ stable main"
 

@@ -1,8 +1,8 @@
 FROM atlassian/confluence-server:7.12.1
 
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
 
-ARG TZ="Africa/Nairobi"
+ENV TZ 'Afria/Nairobi'
 
 ENV TZ ${TZ}
 ENV AGENT_PATH /opt/atlassian-agent.jar

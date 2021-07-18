@@ -1,5 +1,11 @@
 FROM openjdk:8-alpine
 
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
+
 RUN set -x \
 	&& apk add --no-cache --virtual .build-deps \
 		ca-certificates \

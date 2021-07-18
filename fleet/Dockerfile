@@ -1,5 +1,9 @@
 FROM golang:alpine AS builder
-MAINTAINER Jessica Frazelle <jess@linux.com>
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV PATH /go/bin:/usr/local/go/bin:$PATH
 ENV GOPATH /go

@@ -1,8 +1,10 @@
 FROM debian:bullseye-slim
 
-LABEL maintainer="buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
 ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 RUN	apt-get update && apt-get install -y \
 	bridge-utils \

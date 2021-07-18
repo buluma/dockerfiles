@@ -1,4 +1,11 @@
 FROM alpine:latest AS cl-k8s
+
+LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
+
 RUN apk add --no-cache \
 	git
 RUN git clone https://github.com/brendandburns/cl-k8s.git /cl-k8s

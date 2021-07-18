@@ -1,4 +1,9 @@
 FROM openjdk:8-alpine
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
+
+ENV TZ 'Afria/Nairobi'
+
+ENV TZ ${TZ}
 
 ENV ZOOKEEPER_VERSION 3.6.1
 ENV PATH $PATH:/opt/zookeeper/bin/
