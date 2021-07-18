@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script gets the latest GitHub releases for the specified projects.
 
-if [[ -z "$GITHUB_TOKEN" ]]; then
+if [[ -z "${{secrets.GITHUB_TOKEN}}" ]]; then
 	echo "Set the GITHUB_TOKEN env variable."
 	exit 1
 fi
@@ -9,7 +9,9 @@ fi
 URI=https://api.github.com
 API_VERSION=v3
 API_HEADER="Accept: application/vnd.github.${API_VERSION}+json"
-AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
+# AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
+AUTH_HEADER="Authorization: token ${{secrets.GITHUB_TOKEN}}"
+
 
 get_latest() {
 	local repo=$1
