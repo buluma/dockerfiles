@@ -3,4 +3,5 @@ disable=SC2166
 disable=SC2220
 disable=SC2002
 disable=SC2181
-# disable=SC2002
+disable=SC2002
+
