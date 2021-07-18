@@ -20,5 +20,5 @@ jobs:
         # run: make dockerfiles
 #         run: make build
         # run: make latest-versions
-        run: make run DIR=github-dev
+        run: make image DIR=github-dev
         shell: bash
