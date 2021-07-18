@@ -5,7 +5,7 @@
 # 	buluma/ab
 #
 FROM alpine:latest
-LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
 RUN apk --no-cache add \
 	apache2-ssl \

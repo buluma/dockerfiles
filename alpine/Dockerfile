@@ -1,10 +1,6 @@
 FROM alpine:3.14
 
-LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
-
-ARG TZ="Africa/Nairobi"
-
-ENV TZ ${TZ}
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
 RUN apk upgrade \
     && apk add bash tzdata bind-tools busybox-extras ca-certificates libc6-compat wget curl \

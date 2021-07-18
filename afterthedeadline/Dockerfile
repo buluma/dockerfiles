@@ -1,5 +1,5 @@
 FROM openjdk:8-alpine
-LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
 RUN apk add --no-cache \
 	ca-certificates \

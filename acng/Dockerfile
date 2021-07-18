@@ -1,6 +1,6 @@
 FROM sameersbn/apt-cacher-ng
 
-LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.co.ke>"
 
 RUN set -ex \
     && apt update \
