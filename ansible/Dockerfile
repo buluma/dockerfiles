@@ -10,6 +10,8 @@
 FROM python:3-alpine
 LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
 
+RUN pip install --upgrade pip
+
 RUN builddeps=' \
 		musl-dev \
 		openssl-dev \
