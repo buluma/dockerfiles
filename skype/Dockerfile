@@ -11,7 +11,6 @@
 #	jess/skype
 #
 FROM debian:bullseye-slim
-LABEL maintainer="buluma <ops@buluma.me.ke>"
 
 # Tell debconf to run in non-interactive mode
 ENV DEBIAN_FRONTEND noninteractive

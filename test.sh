@@ -4,8 +4,8 @@ set -o pipefail
 
 # this is kind of an expensive check, so let's not do this twice if we
 # are running more than one validate bundlescript
-VALIDATE_REPO='https://github.com/buluma/dockerfiles.git'
-VALIDATE_BRANCH='main'
+VALIDATE_REPO='https://github.com/jessfraz/dockerfiles.git'
+VALIDATE_BRANCH='master'
 
 VALIDATE_HEAD="$(git rev-parse --verify HEAD)"
 
@@ -25,7 +25,6 @@ validate_diff() {
 # get the dockerfiles changed
 IFS=$'\n'
 # shellcheck disable=SC2207
-# shellcheck disable=SC2034
 files=( $(validate_diff --name-only -- '*Dockerfile') )
 unset IFS
 
@@ -47,7 +46,6 @@ for f in ${files[@]}; do
 
 	(
 	set -x
-	# docker login -u buluma
 	docker build -t "${base}:${suite}" "${build_dir}"
 	)
 

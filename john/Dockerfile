@@ -1,6 +1,5 @@
-# FROM alpine:latest
-FROM alpine:3.13
-LABEL maintainer "buluma <ops@buluma.me.ke>"
+FROM alpine:latest
+LABEL maintainer "Jessie Frazelle <jess@linux.com>"
 
 RUN apk add --no-cache \
 	ca-certificates \

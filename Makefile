@@ -27,7 +27,6 @@ image: ## Build a Dockerfile (ex. DIR=telnet).
 
 .PHONY: test
 test: dockerfiles shellcheck ## Runs the tests on the repository.
-# test: dockerfiles shellcheck -e SC2166 ## Runs the tests on the repository.
 
 .PHONY: dockerfiles
 dockerfiles: ## Tests the changes to the Dockerfiles build.

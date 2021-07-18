@@ -1,26 +1,15 @@
 #!/bin/bash
 # This script gets the latest GitHub releases for the specified projects.
 
-if [[ -z "${GITHUB_TOKEN}" ]]; then
+if [[ -z "$GITHUB_TOKEN" ]]; then
 	echo "Set the GITHUB_TOKEN env variable."
 	exit 1
 fi
-
-# if [[ -n "$TOKEN" ]]; then
-# 	GITHUB_TOKEN=$TOKEN
-# fi
-
-# if [[ -z "$GITHUB_TOKEN" ]]; then
-# 	echo "Set the GITHUB_TOKEN env variable."
-# 	exit 1
-# fi
 
 URI=https://api.github.com
 API_VERSION=v3
 API_HEADER="Accept: application/vnd.github.${API_VERSION}+json"
 AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
-# AUTH_HEADER="Authorization: token ${secrets.GITHUB_TOKEN}"
-
 
 get_latest() {
 	local repo=$1
@@ -57,8 +46,7 @@ get_latest() {
 	elif [[ "$dir" == "Tautulli" ]]; then
 		dir="plexpy"
 	elif [[ "$dir" == "zookeeper" ]]; then
-		# dir="zookeeper/3.6"
-		dir="zookeeper"
+		dir="zookeeper/3.6"
 	elif [[ "$dir" == "oauth2_proxy" ]]; then
 		dir="oauth2-proxy"
 	fi
@@ -104,8 +92,7 @@ get_latest_unifi() {
 
 compare() {
 	local name="$1" dir="$2" tag="$3" current="$4" releases="$5"
-	# ignore_dirs=( "mc" "zookeeper/3.6" )
-	ignore_dirs=( "mc" "zookeeper" )
+	ignore_dirs=( "mc" "zookeeper/3.6" )
 
 	if [[ "$tag" =~ $current ]] || [[ "$name" =~ $current ]] || [[ "$current" =~ $tag ]] || [[ "$current" == "master" ]]; then
 		echo -e "\\e[36m${dir}:\\e[39m current ${current} | ${tag} | ${name}"
@@ -119,63 +106,61 @@ compare() {
 }
 
 projects=(
-	apache/activemq
-	cptactionhank/docker-atlassian-confluence
-	# iovisor/bcc
-	# iovisor/bpftrace
-	# browsh-org/browsh
-	# certbot/certbot
-	# cloudflare/cfssl
-	# quay/clair
-	# hashicorp/consul
-	# coredns/coredns
-	# CouchPotato/CouchPotatoServer
-	# curl/curl
-	# kolide/fleet
-	# GoogleCloudPlatform/cloud-sdk-docker
-	# google/gitiles
-	# google/guetzli
-	# irssi/irssi
-	# cryptodotis/irssi-otr
-	# keepassxreboot/keepassxc
-	# robertdavidgraham/masscan
-	# MidnightCommander/mc
-	# zyedidia/micro
-	# mitmproxy/mitmproxy
-	# hashicorp/nomad
-	# nzbget/nzbget
-	# pusher/oauth2_proxy
-	# facebook/osquery
-	# hashicorp/packer
-	# Tautulli/Tautulli
-	# perkeep/perkeep
-	# pomerium/pomerium
-	# powershell/powershell
-	# Radarr/Radarr
-	# cesanta/docker_auth
-	# ricochet-im/ricochet
-	# reverse-shell/routersploit
-	# rstudio/rstudio
-	# tarsnap/tarsnap
-	# nginx/nginx
-	# simplresty/ngx_devel_kit
-	# openresty/luajit2
-	# openresty/lua-cjson
-	# openresty/lua-nginx-module
-	# leev/ngx_http_geoip2_module
-	# maxmind/libmaxminddb
-	# openresty/lua-resty-core
-	# openresty/lua-resty-lrucache
+	iovisor/bcc
+	iovisor/bpftrace
+	browsh-org/browsh
+	certbot/certbot
+	cloudflare/cfssl
+	quay/clair
+	hashicorp/consul
+	coredns/coredns
+	CouchPotato/CouchPotatoServer
+	curl/curl
+	kolide/fleet
+	GoogleCloudPlatform/cloud-sdk-docker
+	google/gitiles
+	google/guetzli
+	irssi/irssi
+	cryptodotis/irssi-otr
+	keepassxreboot/keepassxc
+	robertdavidgraham/masscan
+	MidnightCommander/mc
+	zyedidia/micro
+	mitmproxy/mitmproxy
+	hashicorp/nomad
+	nzbget/nzbget
+	pusher/oauth2_proxy
+	facebook/osquery
+	hashicorp/packer
+	Tautulli/Tautulli
+	perkeep/perkeep
+	pomerium/pomerium
+	powershell/powershell
+	Radarr/Radarr
+	cesanta/docker_auth
+	ricochet-im/ricochet
+	reverse-shell/routersploit
+	rstudio/rstudio
+	tarsnap/tarsnap
+	nginx/nginx
+	simplresty/ngx_devel_kit
+	openresty/luajit2
+	openresty/lua-cjson
+	openresty/lua-nginx-module
+	leev/ngx_http_geoip2_module
+	maxmind/libmaxminddb
+	openresty/lua-resty-core
+	openresty/lua-resty-lrucache
 	hashicorp/terraform
-	# kdlucas/byte-unixbench
+	kdlucas/byte-unixbench
 	mitchellh/vagrant
-	# hashicorp/vault
-	# containrrr/watchtower
-	# wireguard/wireguard-tools
-	# wireguard/wireguard-linux-compat
-	# znc/znc
+	hashicorp/vault
+	containrrr/watchtower
+	wireguard/wireguard-tools
+	wireguard/wireguard-linux-compat
+	znc/znc
 	apache/zookeeper
-	# tianon/gosu
+	tianon/gosu
 )
 
 other_projects=(
