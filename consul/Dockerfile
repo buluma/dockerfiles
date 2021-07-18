@@ -7,7 +7,7 @@
 FROM debian:latest
 MAINTAINER Michael Buluma
 
-ARG CONSUL_VERSION=v1.10.1
+ARG CONSUL_VERSION=1.10.1
 
 ENV PATH $PATH:/
 

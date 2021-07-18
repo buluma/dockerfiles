@@ -114,7 +114,7 @@ projects=(
 	# certbot/certbot
 	# cloudflare/cfssl
 	# quay/clair
-	hashicorp/consul
+	# hashicorp/consul
 	# coredns/coredns
 	# CouchPotato/CouchPotatoServer
 	# curl/curl
