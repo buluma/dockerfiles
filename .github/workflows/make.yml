@@ -5,7 +5,7 @@ name: 1. Make Test
 on:
   push:
     paths:
-      - 'cathode/**'
+      - 'spotify/**'
       - '.github/workflows/make.yml'
 
   schedule:
@@ -37,6 +37,6 @@ jobs:
         # run: make dockerfiles
         # run: make build
         # run: make latest-versions
-        run: make image DIR=cathode
+        run: make image DIR=spotify
         # run: make run DIR=ab
         shell: bash
