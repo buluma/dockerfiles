@@ -1,62 +1,43 @@
-FROM golang:latest as builder
-MAINTAINER Jessica Frazelle <jess@linux.com>
+# busybox wget doesn't support SSL, no curl available :-(
+#FROM busybox:latest
+# Alpine keeps breaking stuff, even after adding libc6-compat:
+# Error relocating ./consul: __fprintf_chk: symbol not foundError relocating ./consul: __fprintf_chk: symbol not found
+# rather than downloading glibc with a tonne of extra commands, just switch to debian
+#FROM alpine:latest
+FROM debian:latest
+MAINTAINER Michael Buluma
 
-ENV PATH /go/bin:/usr/local/go/bin:$PATH
-ENV GOPATH /go
+ARG CONSUL_VERSION=1.9.7
 
-RUN apt-get update && apt-get install -y \
-	apt-transport-https \
-	ca-certificates \
-	curl \
-	gcc \
-	git \
-	make \
-	ruby-dev \
-	ruby \
-	--no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/*
+ENV PATH $PATH:/
 
-# Add yarn to apt repos.
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+LABEL Description="HashiCorp's Consul minimal" \
+      "Consul Version"="$CONSUL_VERSION"
 
-# Setup node install.
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+# faster, cached
+#COPY consul /
 
-RUN apt-get update && apt-get install -y \
-	nodejs \
-	yarn \
-	--no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/*
+#ADD https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip
 
-# ENV CONSUL_VERSION v1.8.0-beta2
-ENV CONSUL_VERSION v1.9.8
+RUN bash -c ' \
+    set -euxo pipefail && \
+    #apk add --no-cache wget unzip ca-certificates && \
+    apt-get update && \
+    apt-get install -y wget unzip net-tools && \
+    wget -t 100 --retry-connrefused -O "consul_${CONSUL_VERSION}_linux_amd64.zip" "https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip" && \
+    unzip "consul_${CONSUL_VERSION}_linux_amd64.zip" && \
+    rm -fv "consul_${CONSUL_VERSION}_linux_amd64.zip" && \
+    chmod +x consul && \
+    ls -l && \
+    #apk del wget unzip ca-certificates
+    apt-get purge -y wget unzip && \
+    apt-get autoremove -y && \
+    apt-get clean \
+    '
 
-RUN go get github.com/hashicorp/consul || true
+#COPY entrypoint.sh /
 
-WORKDIR /go/src/github.com/hashicorp/consul
+EXPOSE 8400 8500 8600
 
-RUN git checkout "${CONSUL_VERSION}"
-
-# Install deps for UI.
-RUN gem install \
-	bundler \
-	--no-ri --no-rdoc
-
-RUN cd ui-v2 \
-	&& yarn install \
-	&& make \
-	&& rm -rf ../pkg/web_ui \
-	&& mkdir -p ../pkg \
-	&& cp -r dist ../pkg/web_ui
-
-RUN TERM=xterm XC_ARCH="amd64" XC_OS="linux" LD_FLAGS=" -extldflags -static" make tools static-assets bin \
-	&& mv bin/consul /usr/bin/consul
-
-FROM alpine:latest
-
-COPY --from=builder /usr/bin/consul /usr/bin/consul
-COPY --from=builder /etc/ssl/certs/ /etc/ssl/certs
-
-ENTRYPOINT [ "consul" ]
-CMD [ "--help" ]
+#ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/consul"]
