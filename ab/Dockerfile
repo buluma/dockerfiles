@@ -2,7 +2,7 @@
 # in a container
 #
 # docker run --rm -it \
-# 	jess/ab
+# 	buluma/ab
 #
 FROM alpine:latest
 LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
