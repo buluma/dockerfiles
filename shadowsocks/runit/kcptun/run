@@ -11,7 +11,7 @@ if [ "${KCP_FLAG}" == "true" ]; then
     
     if [ -n "${KCP_CONFIG}" ]; then
         echo "starting kcptun..."
-        exec chpst -u kcptun ${KCP_MODULE} ${KCP_CONFIG}
+        exec chpst -u kcptun ${KCP_MODULE} "${KCP_CONFIG}"
     else
         echo "Error: KCP_CONFIG is empty, exit!"
         exit 1

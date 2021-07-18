@@ -6,4 +6,4 @@ for dir in /data/data /data/logs /data/config /data/plugins /data/client-plugins
     fi
 done
 
-exec $@
+exec "$@"

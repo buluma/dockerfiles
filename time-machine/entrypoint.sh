@@ -21,18 +21,19 @@ while getopts "u:i:p:m:v" OPT; do
     esac
 done
 
-cat /etc/passwd | grep ${USER_NAME} >& /dev/null
+# cat /etc/passwd | grep ${USER_NAME} >& /dev/null
+cat /etc/passwd | grep "${USER_NAME}" >& /dev/null
 
 if [ $? -ne 0 ];then
     echo "Add user: ${USER_NAME}..."
-    adduser -S -H -G root ${USER_NAME} -u ${USER_ID}
-    echo ${USER_NAME}:${PASSWORD} | chpasswd &> /dev/null
+    adduser -S -H -G root "${USER_NAME}" -u "${USER_ID}"
+    echo "${USER_NAME}":"${PASSWORD}" | chpasswd &> /dev/null
 else
     echo "User: ${USER_NAME} already exists!"
 fi
 
-mkdir -p ${MOUNT_POINT}
-chown -R ${USER_NAME}:root ${MOUNT_POINT}
+mkdir -p "${MOUNT_POINT}"
+chown -R "${USER_NAME}":root "${MOUNT_POINT}"
 
 cat /etc/afp.conf | grep "${USER_NAME}" >& /dev/null
 

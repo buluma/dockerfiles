@@ -20,11 +20,11 @@ if [ -z "$JOOMLA_DB_HOST" ]; then
 fi
 
 # If the DB user is 'root' then use the MySQL root password env var
-: ${JOOMLA_DB_USER:=root}
+: "${JOOMLA_DB_USER:=root}"
 if [ "$JOOMLA_DB_USER" = 'root' ]; then
-        : ${JOOMLA_DB_PASSWORD:=$MYSQL_ENV_MYSQL_ROOT_PASSWORD}
+        : "${JOOMLA_DB_PASSWORD:=$MYSQL_ENV_MYSQL_ROOT_PASSWORD}"
 fi
-: ${JOOMLA_DB_NAME:=joomla}
+: "${JOOMLA_DB_NAME:=joomla}"
 
 if [ -z "$JOOMLA_DB_PASSWORD" ]; then
         echo >&2 "error: missing required JOOMLA_DB_PASSWORD environment variable"
