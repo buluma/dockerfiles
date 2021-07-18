@@ -7,7 +7,8 @@
 # fi
 
 if [[ -n "$TOKEN" ]]; then
-	GITHUB_TOKEN=$TOKEN
+	# GITHUB_TOKEN=$TOKEN
+	GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
 fi
 
 if [[ -z "$GITHUB_TOKEN" ]]; then
