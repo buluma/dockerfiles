@@ -25,7 +25,7 @@ validate_diff() {
 # get the dockerfiles changed
 IFS=$'\n'
 # shellcheck disable=SC2207
-# shellcheck disable=SC2166
+# shellcheck disable=SC2034
 files=( $(validate_diff --name-only -- '*Dockerfile') )
 unset IFS
 
