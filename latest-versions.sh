@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script gets the latest GitHub releases for the specified projects.
 
-if [[ -z "${secrets.GITHUB_TOKEN}" ]]; then
+if [[ -z "${GITHUB_TOKEN}" ]]; then
 	echo "Set the GITHUB_TOKEN env variable."
 	exit 1
 fi
