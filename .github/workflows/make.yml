@@ -3,6 +3,11 @@ name: 1. Make Test
 
 # This runs every day on 1801 UTC
 on:
+  on:
+  push:
+    paths:
+      - '.github/workflows/make.yml'
+
   schedule:
     - cron: '1 18 * * *'
   # Allows manual workflow run (must in default branch to work)
