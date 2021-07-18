@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-LABEL maintainer "buluma <ops@buluma.me.ke>"
+LABEL maintainer "Michael Buluma <ops@buluma.me.ke>"
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	byobu \
