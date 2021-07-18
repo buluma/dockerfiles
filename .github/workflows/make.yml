@@ -36,6 +36,6 @@ jobs:
         # run: make dockerfiles
         # run: make build
         # run: make latest-versions
-        run: make image DIR=afterthedeadline
+        run: make image DIR=alpine
         # run: make run DIR=ab
         shell: bash
