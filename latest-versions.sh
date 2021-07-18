@@ -110,6 +110,8 @@ compare() {
 }
 
 projects=(
+	apache/activemq
+	cptactionhank/docker-atlassian-confluence
 	# iovisor/bcc
 	# iovisor/bpftrace
 	# browsh-org/browsh
