@@ -32,9 +32,9 @@ jobs:
         with:
           fetch-depth: '2'
       - name: make test
-        run: make test
+        # run: make test
         # run: make dockerfiles
         # run: make build
         # run: make latest-versions
-        # run: make image DIR=github-dev
+        run: make image DIR=ab
         shell: bash
