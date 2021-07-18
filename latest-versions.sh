@@ -106,61 +106,61 @@ compare() {
 }
 
 projects=(
-	iovisor/bcc
-	iovisor/bpftrace
-	browsh-org/browsh
-	certbot/certbot
-	cloudflare/cfssl
-	quay/clair
+	# iovisor/bcc
+	# iovisor/bpftrace
+	# browsh-org/browsh
+	# certbot/certbot
+	# cloudflare/cfssl
+	# quay/clair
 	hashicorp/consul
-	coredns/coredns
-	CouchPotato/CouchPotatoServer
-	curl/curl
-	kolide/fleet
-	GoogleCloudPlatform/cloud-sdk-docker
-	google/gitiles
-	google/guetzli
-	irssi/irssi
-	cryptodotis/irssi-otr
-	keepassxreboot/keepassxc
-	robertdavidgraham/masscan
-	MidnightCommander/mc
-	zyedidia/micro
-	mitmproxy/mitmproxy
-	hashicorp/nomad
-	nzbget/nzbget
-	pusher/oauth2_proxy
-	facebook/osquery
-	hashicorp/packer
-	Tautulli/Tautulli
-	perkeep/perkeep
-	pomerium/pomerium
-	powershell/powershell
-	Radarr/Radarr
-	cesanta/docker_auth
-	ricochet-im/ricochet
-	reverse-shell/routersploit
-	rstudio/rstudio
-	tarsnap/tarsnap
-	nginx/nginx
-	simplresty/ngx_devel_kit
-	openresty/luajit2
-	openresty/lua-cjson
-	openresty/lua-nginx-module
-	leev/ngx_http_geoip2_module
-	maxmind/libmaxminddb
-	openresty/lua-resty-core
-	openresty/lua-resty-lrucache
-	hashicorp/terraform
-	kdlucas/byte-unixbench
-	mitchellh/vagrant
-	hashicorp/vault
-	containrrr/watchtower
-	wireguard/wireguard-tools
-	wireguard/wireguard-linux-compat
-	znc/znc
+	# coredns/coredns
+	# CouchPotato/CouchPotatoServer
+	# curl/curl
+	# kolide/fleet
+	# GoogleCloudPlatform/cloud-sdk-docker
+	# google/gitiles
+	# google/guetzli
+	# irssi/irssi
+	# cryptodotis/irssi-otr
+	# keepassxreboot/keepassxc
+	# robertdavidgraham/masscan
+	# MidnightCommander/mc
+	# zyedidia/micro
+	# mitmproxy/mitmproxy
+	# hashicorp/nomad
+	# nzbget/nzbget
+	# pusher/oauth2_proxy
+	# facebook/osquery
+	# hashicorp/packer
+	# Tautulli/Tautulli
+	# perkeep/perkeep
+	# pomerium/pomerium
+	# powershell/powershell
+	# Radarr/Radarr
+	# cesanta/docker_auth
+	# ricochet-im/ricochet
+	# reverse-shell/routersploit
+	# rstudio/rstudio
+	# tarsnap/tarsnap
+	# nginx/nginx
+	# simplresty/ngx_devel_kit
+	# openresty/luajit2
+	# openresty/lua-cjson
+	# openresty/lua-nginx-module
+	# leev/ngx_http_geoip2_module
+	# maxmind/libmaxminddb
+	# openresty/lua-resty-core
+	# openresty/lua-resty-lrucache
+	# hashicorp/terraform
+	# kdlucas/byte-unixbench
+	# mitchellh/vagrant
+	# hashicorp/vault
+	# containrrr/watchtower
+	# wireguard/wireguard-tools
+	# wireguard/wireguard-linux-compat
+	# znc/znc
 	apache/zookeeper
-	tianon/gosu
+	# tianon/gosu
 )
 
 other_projects=(
