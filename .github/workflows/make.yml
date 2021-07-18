@@ -37,6 +37,6 @@ jobs:
         # run: make dockerfiles
         # run: make build
         # run: make latest-versions
-        run: make image DIR=spotify
+        run: make image DIR=vscode
         # run: make run DIR=ab
         shell: bash
