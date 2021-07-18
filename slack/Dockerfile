@@ -12,10 +12,13 @@
 #	-v "${HOME}/.slack:/root/.config/Slack" \
 #	--ipc="host" \
 #	--name slack \
-#	jess/slack "$@"
+#	buluma/slack "$@"
 
 FROM debian:bullseye-slim
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
+LABEL maintainer "Jessie Frazelle <ops@buluma.co.ke>"
+
+# Tell debconf to run in non-interactive mode
+ENV DEBIAN_FRONTEND noninteractive
 
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
