@@ -35,8 +35,8 @@ jobs:
       - name: make test
         # run: make test
         # run: make dockerfiles
-        # run: make build
+        run: make build
         # run: make latest-versions
-        run: make image DIR=keepass2
+        # run: make image DIR=keepass2
         # run: make run DIR=ab
         shell: bash
