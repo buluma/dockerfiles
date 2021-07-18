@@ -10,6 +10,8 @@
 FROM python:3-alpine
 LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
 
+ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1
+
 RUN pip install --upgrade pip
 
 RUN builddeps=' \
