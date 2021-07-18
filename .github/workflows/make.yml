@@ -3,7 +3,6 @@ name: 1. Make Test
 
 # This runs every day on 1801 UTC
 on:
-  on:
   push:
     paths:
       - '.github/workflows/make.yml'
