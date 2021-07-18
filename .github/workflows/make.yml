@@ -10,6 +10,6 @@ jobs:
         with:
           fetch-depth: '2'
       - name: make test
-#         run: make test
-        run: make latest-versions
+        run: make test
+#         run: make latest-versions
         shell: bash
