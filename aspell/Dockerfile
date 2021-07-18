@@ -1,8 +1,8 @@
 FROM alpine:latest
 LABEL maintainer "Jessie Frazelle <jess@linux.com>"
 
-RUN apk --no-cache add \
-	bash \
-	certbot
+RUN apk add --no-cache \
+	aspell \
+	aspell-en
 
-ENTRYPOINT [ "certbot" ]
+ENTRYPOINT ["aspell"]
