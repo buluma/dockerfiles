@@ -5,7 +5,7 @@ name: 1. Make Test
 on:
   push:
     paths:
-      - 'apt-file/**'
+      - 'aspell/**'
       - '.github/workflows/make.yml'
 
   schedule:
@@ -37,6 +37,6 @@ jobs:
         # run: make dockerfiles
         # run: make build
         # run: make latest-versions
-        run: make image DIR=apt-file
+        run: make image DIR=aspell
         # run: make run DIR=ab
         shell: bash
