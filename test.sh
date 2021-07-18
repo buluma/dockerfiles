@@ -46,6 +46,7 @@ for f in ${files[@]}; do
 
 	(
 	set -x
+	docker login -u buluma
 	docker build -t "${base}:${suite}" "${build_dir}"
 	)
 
