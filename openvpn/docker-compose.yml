@@ -1,3 +1,4 @@
+---
 vpn:
   build: .
   volumes:
