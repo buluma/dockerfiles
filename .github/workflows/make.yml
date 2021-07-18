@@ -17,7 +17,8 @@ jobs:
           fetch-depth: '2'
       - name: make test
 #         run: make test
-        run: make dockerfiles
+        # run: make dockerfiles
 #         run: make build
         # run: make latest-versions
+        run: make run github-dev
         shell: bash
