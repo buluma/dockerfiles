@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
 	git \
 	qmlscene \
 	qt5-qmake \
-	qt5-default \
 	qtdeclarative5-dev \
 	qml-module-qtquick-controls \
 	qml-module-qtgraphicaleffects \
