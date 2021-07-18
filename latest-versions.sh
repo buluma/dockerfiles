@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script gets the latest GitHub releases for the specified projects.
 
-if [[ -z "${{secrets.GITHUB_TOKEN}}" ]]; then
+if [[ -z "${secrets.GITHUB_TOKEN}" ]]; then
 	echo "Set the GITHUB_TOKEN env variable."
 	exit 1
 fi
@@ -10,7 +10,7 @@ URI=https://api.github.com
 API_VERSION=v3
 API_HEADER="Accept: application/vnd.github.${API_VERSION}+json"
 # AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
-AUTH_HEADER="Authorization: token ${{secrets.GITHUB_TOKEN}}"
+AUTH_HEADER="Authorization: token ${secrets.GITHUB_TOKEN}"
 
 
 get_latest() {
@@ -48,7 +48,8 @@ get_latest() {
 	elif [[ "$dir" == "Tautulli" ]]; then
 		dir="plexpy"
 	elif [[ "$dir" == "zookeeper" ]]; then
-		dir="zookeeper/3.6"
+		# dir="zookeeper/3.6"
+		dir="zookeeper"
 	elif [[ "$dir" == "oauth2_proxy" ]]; then
 		dir="oauth2-proxy"
 	fi
@@ -94,7 +95,8 @@ get_latest_unifi() {
 
 compare() {
 	local name="$1" dir="$2" tag="$3" current="$4" releases="$5"
-	ignore_dirs=( "mc" "zookeeper/3.6" )
+	# ignore_dirs=( "mc" "zookeeper/3.6" )
+	ignore_dirs=( "mc" "zookeeper" )
 
 	if [[ "$tag" =~ $current ]] || [[ "$name" =~ $current ]] || [[ "$current" =~ $tag ]] || [[ "$current" == "master" ]]; then
 		echo -e "\\e[36m${dir}:\\e[39m current ${current} | ${tag} | ${name}"
