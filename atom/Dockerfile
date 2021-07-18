@@ -23,10 +23,6 @@ FROM debian:bullseye-slim
 
 LABEL maintainer "Michael Buluma <buluma@buluma.co.ke>"
 
-ENV TZ 'Afria/Nairobi'
-
-ENV TZ ${TZ}
-
 # Tell debconf to run in non-interactive mode
 ENV DEBIAN_FRONTEND noninteractive
 
