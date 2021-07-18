@@ -9,8 +9,8 @@ fi
 URI=https://api.github.com
 API_VERSION=v3
 API_HEADER="Accept: application/vnd.github.${API_VERSION}+json"
-# AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
-AUTH_HEADER="Authorization: token ${secrets.GITHUB_TOKEN}"
+AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
+# AUTH_HEADER="Authorization: token ${secrets.GITHUB_TOKEN}"
 
 
 get_latest() {
