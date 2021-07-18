@@ -1,2 +1,4 @@
 #!/bin/sh
-shellcheck disable=SC2059
+disable=SC2220
+disable=SC2002
+disable=SC2181
