@@ -1,5 +1,3 @@
 #!/bin/sh
-disable=SC2220
-disable=SC2002
-disable=SC2181
-disable=SC2166
+# shellcheck disable=SC2220,SC2002,SC2181,SC2166
+hash=$(echo ${hash})    # trim spaces
