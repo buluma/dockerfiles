@@ -7,6 +7,11 @@ jobs:
     name: make test
     runs-on: ubuntu-latest
     steps:
+      - name Authenticate Github
+        uses: actions/labeler@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
