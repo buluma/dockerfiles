@@ -1,4 +1,4 @@
 #!/bin/sh
 # shellcheck disable=SC2034
-## disable=SC2220,SC2002,SC2181,SC2166
+disable=SC2220,SC2002,SC2181,SC2166
 # hash=$(cmd hash)    # trim spaces
