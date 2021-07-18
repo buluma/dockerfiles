@@ -25,6 +25,7 @@ validate_diff() {
 # get the dockerfiles changed
 IFS=$'\n'
 # shellcheck disable=SC2207
+shellcheck disable=SC2166
 files=( $(validate_diff --name-only -- '*Dockerfile') )
 unset IFS
 
@@ -46,7 +47,7 @@ for f in ${files[@]}; do
 
 	(
 	set -x
-	docker login -u buluma
+	# docker login -u buluma
 	docker build -t "${base}:${suite}" "${build_dir}"
 	)
 
